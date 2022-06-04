@@ -195,7 +195,7 @@ It can be used to deploy applications, inspect and manage cluster resources, and
 <li><p>Set environment variables</p>
 <p>The CLUSTER_NAME, RANCHER_SERVER_HOSTNAME and KUBECONFIG_FILE environment variables need to be set so that they can be used in the next commands.
 If you don’t want to set environment variables you can replace their values in the commands. What you need to do is replace $CLUSTER_NAME with “k3d-rancher”, $RANCHER_SERVER_HOSTNAME with “rancher.localhost” and $KUBECONFIG_FILE with “k3d-rancher.yml”.</p>
-<p><strong>For MacOS/Linux</strong>:</p>
+<p><strong>For macOS/Linux</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CLUSTER_NAME</span><span class="o">=</span><span class="s2">&quot;k3d-rancher&quot;</span>
 <span class="n">export</span> <span class="n">RANCHER_SERVER_HOSTNAME</span><span class="o">=</span><span class="s2">&quot;rancher.localhost&quot;</span>
 <span class="n">export</span> <span class="n">KUBECONFIG_FILE</span><span class="o">=</span><span class="s2">&quot;$CLUSTER_NAME.yaml&quot;</span>
@@ -214,7 +214,7 @@ $env:KUBECONFIG_FILE=&quot;${env:CLUSTER_NAME}.yaml&quot;
 <p>Using <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">get</span> <span class="pre">nodes</span></code> you can see the status of each node of the newly created cluster.</p>
 <p>You should also write the cluster configuration into the KUBECONFIG_FILE. This configuration will be later needed when you are creating deployments.
 You can either set the path to the file as an environment variable or replace it with “&lt;path-to-kubeconfig-file&gt;” when needed.</p>
-<p><strong>For MacOS/Linux</strong>:</p>
+<p><strong>For macOS/Linux</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>k3d cluster create $CLUSTER_NAME --api-port 6550 --servers 1 --agents 3 --port 443:443@loadbalancer --wait
 k3d cluster list
 kubectl get nodes
@@ -251,7 +251,7 @@ cert-manager has to be installed in a separate namespace called <code class="doc
 <p>You can install Rancher using Helm - the package manager for Kubernetes. It has to be installed in a namespace called <code class="docutils literal notranslate"><span class="pre">cattle-system</span></code> and we should create such a namespace before the installation itself.
 During the installation, we set the namespace and the hostname on which Rancher will be accessible.
 Then we can check the installation status.</p>
-<p><strong>For MacOS/Linux</strong>:</p>
+<p><strong>For macOS/Linux</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
 helm repo update
 kubectl create namespace cattle-system

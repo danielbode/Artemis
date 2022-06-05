@@ -59,7 +59,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#strings">7. Strings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#buttons-and-links">8. Buttons and Links</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#icons-with-text">9. Icons with Text</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#style">10. Style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-style">10. Code Style</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#preventing-memory-leaks">11. Preventing Memory Leaks</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#what-are-memory-leaks">What are memory leaks?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-are-common-reasons-for-memory-leaks">What are common reasons for memory leaks?</a></li>
@@ -73,6 +73,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#chart-instantiation">14. Chart Instantiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#responsive-layout">15. Responsive Layout</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../client-tests/">Client Tests</a></li>
@@ -215,8 +216,8 @@
 </div>
 <p>Ignoring this will lead to inconsistent spacing between icons and text.</p>
 </div>
-<div class="section" id="style">
-<h2>10. Style<a class="headerlink" href="#style" title="Permalink to this headline"></a></h2>
+<div class="section" id="code-style">
+<h2>10. Code Style<a class="headerlink" href="#code-style" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
 <li><p>Use arrow functions over anonymous function expressions.</p></li>
 <li><dl class="simple">
@@ -399,6 +400,19 @@ of an specific value for the width.</p></li>
 </ol>
 </div></blockquote>
 <p>Some parts of these guidelines are adapted from <a class="reference external" href="https://github.com/microsoft/TypeScript-wiki/blob/main/Coding-guidelines.md">https://github.com/microsoft/TypeScript-wiki/blob/main/Coding-guidelines.md</a></p>
+</div>
+<div class="section" id="responsive-layout">
+<h2>15. Responsive Layout<a class="headerlink" href="#responsive-layout" title="Permalink to this headline"></a></h2>
+<p>Ensure that the layout of your page or component shrinks accordingly and adapts to all display sizes (responsive design).</p>
+<p>Prefer using the <code class="docutils literal notranslate"><span class="pre">.container</span></code> class (<a class="reference external" href="https://getbootstrap.com/docs/5.2/layout/containers/">https://getbootstrap.com/docs/5.2/layout/containers/</a>) when you want limit the page width on extra-large screens.
+Do not use the following for this purpose if it can be avoided:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row justify-content-center&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-12 col-lg-8&quot;</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- Do not do this --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 

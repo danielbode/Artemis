@@ -54,7 +54,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Database Relationships</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#retrieving-and-building-objects">1. Retrieving and Building Objects</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#relationships">2. Relationships</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cascade-types">2. Cascade Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cascade-types">3. Cascade Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#best-practices">Best Practices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#solutions-for-known-issues">Solutions for known issues</a></li>
 </ul>
@@ -175,14 +175,26 @@
 <span class="kd">private</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Exercise</span><span class="o">&gt;</span> <span class="n">exercises</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 </pre></div>
 </div>
+</div></blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>For <strong>OneToMany</strong>, <strong>ManyToOne</strong>, and <strong>ManyToMany</strong> relationships you must not forget to mark the associated elements with <code class="docutils literal notranslate"><span class="pre">&#64;JsonIgnoreProperties()</span></code>. Without this, the object serialization process will be stuck in an endless loop and throw an error. For more information check out the examples listed above and see: <a class="reference external" href="https://www.concretepage.com/jackson-api/jackson-jsonignore-jsonignoreproperties-and-jsonignoretype">Jackson and JsonIgnoreType</a>.</p>
 </div>
-</div></blockquote>
+<div class="admonition-lazy-relationships admonition">
+<p class="admonition-title">Lazy relationships</p>
+<p>Lazy relationships in Artemis may require some additional special handling to work correctly:</p>
+<ul>
+<li><p>Lazy <strong>OneToOne</strong> relationships require the additional presence of the <code class="docutils literal notranslate"><span class="pre">&#64;JoinColumn</span></code> annotation and only work in one direction.
+They can only lazily load the child of the relationship, not the parent. The parent is the entity whose database table owns the foreign key.</p>
+<p>E.g., You can lazily load <code class="docutils literal notranslate"><span class="pre">ProgrammingExercise::solutionParticipation</span></code> but not <code class="docutils literal notranslate"><span class="pre">SolutionProgrammingExerciseParticipation::programmingExercise</span></code>, as the foreign key is part of the <code class="docutils literal notranslate"><span class="pre">exercise</span></code> table.</p>
+</li>
+<li><p>Lazy <strong>ManyToOne</strong> relationships require the additional presence of the <code class="docutils literal notranslate"><span class="pre">&#64;JoinColumn</span></code> annotation.</p></li>
+<li><p>Lazy <strong>OneToMany</strong> and <strong>ManyToMany</strong> relationships work without further changes.</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="cascade-types">
-<h2>2. Cascade Types<a class="headerlink" href="#cascade-types" title="Permalink to this headline"></a></h2>
+<h2>3. Cascade Types<a class="headerlink" href="#cascade-types" title="Permalink to this headline"></a></h2>
 <p>Entity relationships often depend on the existence of another entity — for example, the Result-Feedback relationship. Without the Result, the Feedback entity doesn’t have any meaning of its own. When we delete the Result entity, our Feedback entity should also get deleted. For more information see: <a class="reference external" href="https://www.baeldung.com/jpa-cascade-types">jpa cascade types</a>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">CascadeType.ALL</span></code> Propagates all operations mentioned below from the parent object to the to child object.</p></li>

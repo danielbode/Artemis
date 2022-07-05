@@ -7,9 +7,13 @@ export class LearningGoal implements BaseEntity {
     public id?: number;
     public title?: string;
     public description?: string;
+    public type?: string;
     public course?: Course;
     public exercises?: Exercise[];
     public lectureUnits?: LectureUnit[];
+    public parentLearningGoal?: LearningGoal;
+    public subLearningGoals?: LearningGoal[];
+    public presumedLearningGoals?: LearningGoal[];
 
     constructor() {}
 }

@@ -44,6 +44,7 @@ export const titleUniqueValidator = (learningGoalService: LearningGoalService, c
 export interface LearningGoalFormData {
     title?: string;
     description?: string;
+    type?: string;
     connectedLectureUnits?: LectureUnit[];
 }
 
@@ -57,6 +58,7 @@ export class LearningGoalFormComponent implements OnInit, OnChanges {
     formData: LearningGoalFormData = {
         title: undefined,
         description: undefined,
+        type: undefined,
         connectedLectureUnits: undefined,
     };
 
@@ -91,6 +93,10 @@ export class LearningGoalFormComponent implements OnInit, OnChanges {
         return this.form.get('description');
     }
 
+    get typeControl() {
+        return this.form.get('type');
+    }
+
     ngOnChanges(): void {
         this.initializeForm();
         if (this.isEditMode && this.formData) {
@@ -113,6 +119,7 @@ export class LearningGoalFormComponent implements OnInit, OnChanges {
         this.form = this.fb.group({
             title: [undefined, [Validators.required, Validators.maxLength(255)], [this.titleUniqueValidator(this.learningGoalService, this.courseId, initialTitle)]],
             description: [undefined, [Validators.maxLength(10000)]],
+            type: [undefined, [Validators.maxLength(255)]],
         });
         this.selectedLectureUnitsInTable = [];
     }

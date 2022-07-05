@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -158,10 +159,26 @@ public class LearningGoalIntegrationTest extends AbstractSpringIntegrationBamboo
         LearningGoal learningGoal = new LearningGoal();
         learningGoal.setTitle("LearningGoalOne");
         learningGoal.setDescription("This is an example learning goal");
+        learningGoal.setType("UNDERSTAND");
         learningGoal.setCourse(course);
+
+        LearningGoal presumedLearningGoal = new LearningGoal();
+        presumedLearningGoal.setTitle("Requirement for other learning goal");
+        presumedLearningGoal.setDescription("Cum sociis natoque penatibus et magnis dis parturient.");
+        presumedLearningGoal.setCourse(course);
+        presumedLearningGoal = learningGoalRepository.save(presumedLearningGoal);
+
+        LearningGoal subLearningGoal = new LearningGoal();
+        subLearningGoal.setTitle("Detailed sub learning goal");
+        subLearningGoal.setDescription("A communi observantia non est recedendum.");
+        subLearningGoal.setCourse(course);
+        subLearningGoal = learningGoalRepository.save(subLearningGoal);
+
         List<LectureUnit> allLectureUnits = lectureUnitRepository.findAll();
         Set<LectureUnit> connectedLectureUnits = new HashSet<>(allLectureUnits);
         learningGoal.setLectureUnits(connectedLectureUnits);
+        learningGoal.setPresumedLearningGoals(Stream.of(presumedLearningGoal).collect(Collectors.toSet()));
+        learningGoal.setSubLearningGoals(Stream.of(subLearningGoal).collect(Collectors.toSet()));
         learningGoal = learningGoalRepository.save(learningGoal);
         idOfLearningGoal = learningGoal.getId();
     }
@@ -378,8 +395,8 @@ public class LearningGoalIntegrationTest extends AbstractSpringIntegrationBamboo
     @WithMockUser(username = "student1", roles = "USER")
     public void getLearningGoalsOfCourse_asStudent1_shouldReturnLearningGoals() throws Exception {
         List<LearningGoal> learningGoalsOfCourse = request.getList("/api/courses/" + idOfCourse + "/goals", HttpStatus.OK, LearningGoal.class);
-        assertThat(learningGoalsOfCourse).hasSize(1);
-        assertThat(learningGoalsOfCourse.get(0).getId()).isEqualTo(idOfLearningGoal);
+        assertThat(learningGoalsOfCourse).hasSize(3);
+        assertThat(learningGoalsOfCourse.stream().map(DomainObject::getId)).contains(idOfLearningGoal);
     }
 
     @Test
@@ -393,6 +410,21 @@ public class LearningGoalIntegrationTest extends AbstractSpringIntegrationBamboo
     public void deleteLearningGoal_asInstructor_shouldDeleteLearningGoal() throws Exception {
         request.delete("/api/courses/" + idOfCourse + "/goals/" + idOfLearningGoal, HttpStatus.OK);
         request.get("/api/courses/" + idOfCourse + "/goals/" + idOfLearningGoal, HttpStatus.NOT_FOUND, LearningGoal.class);
+    }
+
+    @Test
+    @WithMockUser(username = "instructor1", roles = "INSTRUCTOR")
+    public void deleteLearningGoal_witSubGoals_shouldReturnBadRequest() throws Exception {
+        LearningGoal learningGoal = new LearningGoal();
+        learningGoal.setTitle("Example Title");
+        learningGoal = learningGoalRepository.save(learningGoal);
+
+        LearningGoal existingLearningGoal = learningGoalRepository.findByIdWithRelatedLearningGoalsElseThrow(idOfLearningGoal);
+        existingLearningGoal.setSubLearningGoals(Stream.of(learningGoal).collect(Collectors.toSet()));
+        existingLearningGoal = learningGoalRepository.save(existingLearningGoal);
+
+        assertThat(existingLearningGoal.getSubLearningGoals()).contains(learningGoal);
+        request.delete("/api/courses/" + idOfCourse + "/goals/" + idOfLearningGoal, HttpStatus.BAD_REQUEST);
     }
 
     @Test
@@ -632,6 +664,35 @@ public class LearningGoalIntegrationTest extends AbstractSpringIntegrationBamboo
         Set<LectureUnit> connectedLectureUnits = new HashSet<>(allLectureUnits);
         learningGoal.setLectureUnits(connectedLectureUnits);
         request.postWithResponseBody("/api/courses/" + idOfCourse + "/goals", learningGoal, LearningGoal.class, HttpStatus.BAD_REQUEST);
+    }
+
+    @Test
+    @WithMockUser(username = "instructor1", roles = "INSTRUCTOR")
+    public void createLearningGoal_extendingAnother() throws Exception {
+        LearningGoal learningGoal = new LearningGoal();
+        learningGoal.setTitle("Example Title");
+        LearningGoal existingLearningGoal = learningGoalRepository.findById(idOfLearningGoal).get();
+        learningGoal.setParentLearningGoal(existingLearningGoal);
+        var persistedLearningGoal = request.postWithResponseBody("/api/courses/" + idOfCourse + "/goals", learningGoal, LearningGoal.class, HttpStatus.CREATED);
+
+        persistedLearningGoal = learningGoalRepository.findByIdWithRelatedLearningGoalsElseThrow(persistedLearningGoal.getId());
+        assertThat(persistedLearningGoal.getParentLearningGoal()).isEqualTo(existingLearningGoal);
+
+        existingLearningGoal = learningGoalRepository.findByIdWithRelatedLearningGoalsElseThrow(idOfLearningGoal);
+        assertThat(existingLearningGoal.getSubLearningGoals()).contains(persistedLearningGoal);
+    }
+
+    @Test
+    @WithMockUser(username = "instructor1", roles = "INSTRUCTOR")
+    public void createLearningGoal_presumingAnother() throws Exception {
+        LearningGoal learningGoal = new LearningGoal();
+        learningGoal.setTitle("Example Title");
+        LearningGoal existingLearningGoal = learningGoalRepository.findById(idOfLearningGoal).get();
+        learningGoal.setPresumedLearningGoals(Stream.of(existingLearningGoal).collect(Collectors.toSet()));
+        var persistedLearningGoal = request.postWithResponseBody("/api/courses/" + idOfCourse + "/goals", learningGoal, LearningGoal.class, HttpStatus.CREATED);
+
+        persistedLearningGoal = learningGoalRepository.findByIdWithRelatedLearningGoalsElseThrow(persistedLearningGoal.getId());
+        assertThat(persistedLearningGoal.getPresumedLearningGoals()).contains(existingLearningGoal);
     }
 
     @Test

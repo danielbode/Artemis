@@ -1,0 +1,35 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="ge65cer" id="20220620092300">
+        <addColumn tableName="learning_goal">
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="parent_id" type="BIGINT"/>
+        </addColumn>
+        <createTable tableName="learning_goal_hierarchy">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="learning_goal_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="assumed_learning_goal_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint constraintName="FK78ea08ecacfc4893ba16187ea8b7d72476d24afc"
+                                 baseTableName="learning_goal"
+                                 baseColumnNames="parent_id"
+                                 referencedTableName="learning_goal"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint constraintName="FKd84cd79d225d13687cfe9c1895fb1cc69e09f553"
+                                 baseTableName="learning_goal_hierarchy"
+                                 baseColumnNames="assumed_learning_goal_id"
+                                 referencedTableName="learning_goal"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint constraintName="FKbeaa051892e67ac2788f413bbf882a547db27e60"
+                                 baseTableName="learning_goal_hierarchy"
+                                 baseColumnNames="learning_goal_id"
+                                 referencedTableName="learning_goal"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

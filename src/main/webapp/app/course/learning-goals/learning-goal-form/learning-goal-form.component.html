@@ -53,7 +53,24 @@
                 </div>
             </div>
             <div>
-                <label> {{ 'artemisApp.learningGoal.createLearningGoal.connectWithLectureUnits' | artemisTranslate }}</label>
+                <label>{{ 'artemisApp.learningGoal.createLearningGoal.parentLearningGoal' | artemisTranslate }}</label>
+                <select class="form-select mb-2" id="parentLearningGoal" formControlName="parentLearningGoal">
+                    <option value="" selected>{{ 'artemisApp.learningGoal.createLearningGoal.noneSelected' | artemisTranslate }}</option>
+                    <option *ngFor="let learningGoal of learningGoalsOfCourse" [value]="learningGoal">
+                        {{ learningGoal.title }}
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>{{ 'artemisApp.learningGoal.createLearningGoal.presumedLearningGoals' | artemisTranslate }}</label>
+                <select class="form-select mb-2" multiple id="presumedLearningGoals" formControlName="presumedLearningGoals">
+                    <option *ngFor="let learningGoal of learningGoalsOfCourse" [value]="learningGoal">
+                        {{ learningGoal.title }}
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>{{ 'artemisApp.learningGoal.createLearningGoal.connectWithLectureUnits' | artemisTranslate }}</label>
                 <div *ngIf="lecturesOfCourseWithLectureUnits && lecturesOfCourseWithLectureUnits.length > 0; else noLectures" ngbDropdown class="mb-2">
                     <button class="btn btn-outline-primary" ngbDropdownToggle type="button">
                         {{

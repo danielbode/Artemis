@@ -8,6 +8,7 @@ import { LectureUnit } from 'app/entities/lecture-unit/lectureUnit.model';
 import { TranslateService } from '@ngx-translate/core';
 import { LectureUnitService } from 'app/lecture/lecture-unit/lecture-unit-management/lectureUnit.service';
 import { intersection } from 'lodash-es';
+import { LearningGoal } from 'app/entities/learningGoal.model';
 
 /**
  * Async Validator to make sure that a learning goal title is unique within a course
@@ -46,6 +47,8 @@ export interface LearningGoalFormData {
     description?: string;
     type?: string;
     connectedLectureUnits?: LectureUnit[];
+    parentLearningGoal?: LearningGoal;
+    presumedLearningGoals?: LearningGoal[];
 }
 
 @Component({
@@ -60,6 +63,8 @@ export class LearningGoalFormComponent implements OnInit, OnChanges {
         description: undefined,
         type: undefined,
         connectedLectureUnits: undefined,
+        parentLearningGoal: undefined,
+        presumedLearningGoals: undefined,
     };
 
     @Input()
@@ -75,6 +80,7 @@ export class LearningGoalFormComponent implements OnInit, OnChanges {
     formSubmitted: EventEmitter<LearningGoalFormData> = new EventEmitter<LearningGoalFormData>();
 
     form: FormGroup;
+    learningGoalsOfCourse: LearningGoal[] = [];
     selectedLectureInDropdown: Lecture;
     selectedLectureUnitsInTable: LectureUnit[] = [];
 
@@ -105,6 +111,9 @@ export class LearningGoalFormComponent implements OnInit, OnChanges {
     }
 
     ngOnInit(): void {
+        this.learningGoalService.getAllForCourse(this.courseId).subscribe((res) => {
+            this.learningGoalsOfCourse = res.body ?? [];
+        });
         this.initializeForm();
     }
 
@@ -120,6 +129,8 @@ export class LearningGoalFormComponent implements OnInit, OnChanges {
             title: [undefined, [Validators.required, Validators.maxLength(255)], [this.titleUniqueValidator(this.learningGoalService, this.courseId, initialTitle)]],
             description: [undefined, [Validators.maxLength(10000)]],
             type: [undefined, [Validators.maxLength(255)]],
+            parentLearningGoal: [undefined],
+            presumedLearningGoals: [undefined],
         });
         this.selectedLectureUnitsInTable = [];
     }

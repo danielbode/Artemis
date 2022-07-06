@@ -355,7 +355,7 @@ Doubling textual segments like <code class="docutils literal notranslate"><span 
 </div>
 <div class="section" id="chart-instantiation">
 <h2>14. Chart Instantiation<a class="headerlink" href="#chart-instantiation" title="Permalink to this headline"></a></h2>
-<p>We are using the framework ngx-charts in order to instantiate charts and diagrams in Artemis.</p>
+<p>We are using the framework <a class="reference external" href="https://github.com/swimlane/ngx-charts">ngx-charts</a> in order to instantiate charts and diagrams in Artemis.</p>
 <p>The following is an example HTML template for a vertical bar chart:</p>
 <div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="p">#</span><span class="na">containerRef</span><span class="p"> </span><span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-9&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">ngx-charts-bar-vertical</span>
@@ -383,10 +383,34 @@ containing the desired content within the selector. The framework dynamically re
 the tooltips are configured in order to present the percentage value corresponding to the absolute value represented by the bar.
 Depending on the chart type, there is more than one type of tooltip configurable.
 For more information visit <a class="reference external" href="https://swimlane.gitbook.io/ngx-charts/">https://swimlane.gitbook.io/ngx-charts/</a></p></li>
+<li><p>In order to manipulate the content of the data label (e.g. the text floating above a chart bar), the framework provides a <code class="docutils literal notranslate"><span class="pre">[dataLabelFormatting]</span></code> property in the
+HTML template that can be assigned to a method. For example:</p>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="na">dataLabelFormatting</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;formatDataLabel&quot;</span>
+</pre></div>
+</div>
+<p>with</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="nx">formatDataLabel</span><span class="p">(</span><span class="nx">averageScore</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">averageScore</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>appends a percentage sign to the data label.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The method is passed to the framework itself and executed there. This means that at runtime it does not have access to global variables of the component it is originally implemented in.
+If this access is necessary, create a (readonly) variable assigned to this method and bind it to the component: <code class="docutils literal notranslate"><span class="pre">readonly</span> <span class="pre">bindFormatting</span> <span class="pre">=</span> <span class="pre">this.formatDataLabel.bind(this);</span></code></p>
+</div>
+</li>
 <li><p>Some design properties are not directly configurable via the framework (e.g. the font-size and weight of the data labels).
 The tool <code class="docutils literal notranslate"><span class="pre">::ng-deep</span></code> is useful in these situations as it allows to change some of these properties by overwriting them in
 a corresponding style sheet. Adapting the font-size and weight of data labels would look like this:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">::</span><span class="nd">ng-deep</span> <span class="p">.</span><span class="nc">textDataLabel</span> <span class="p">{</span>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">::ng-deep</span></code> breaks the view encapsulation of the rule. This can lead to undesired and flaky side effects on other pages of Artemis.
+For more information, refer to the <a class="reference external" href="https://angular.io/guide/component-styles#deprecated-deep--and-ng-deep">Angular documentation</a>.
+<strong>Therefore, only use this annotation if this is absolutely necessary.</strong> To limit the potential of side effects, add a <code class="docutils literal notranslate"><span class="pre">:host</span></code> in front of the command.</p>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="nd">host</span><span class="p">::</span><span class="nd">ng-deep</span> <span class="p">.</span><span class="nc">textDataLabel</span> <span class="p">{</span>
     <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bolder</span><span class="p">;</span>
     <span class="k">font-size</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span> <span class="cp">!important</span><span class="p">;</span>
 <span class="p">}</span>
@@ -397,6 +421,27 @@ a corresponding style sheet. Adapting the font-size and weight of data labels wo
 First, annotate the parent container with a reference (in the example <code class="docutils literal notranslate"><span class="pre">#containerRef</span></code>).
 Then, when configuring the dimensions of the chart in <code class="docutils literal notranslate"><span class="pre">[view]</span></code>, insert <code class="docutils literal notranslate"><span class="pre">containerRef.offsetWidth</span></code> instead
 of an specific value for the width.</p></li>
+<li><p>There are two ways to keep axis labels and axis ticks translation-sensitive if they contain natural language:</p>
+<ul class="simple">
+<li><p>Axis labels are passed directly as property in the HTML template. Simply insert the translation string together with the translate pipe:</p></li>
+</ul>
+<div class="highlight-html+ng2 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="na">xAxisLabel</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&#39;artemisApp.exam.charts.xAxisLabel&#39; | artemisTranslate&quot;</span>
+<span class="p">[</span><span class="na">yAxisLabel</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&#39;artemisApp.exam.charts.yAxisLabel&#39; | artemisTranslate&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>For some chart types, the framework derives the ticks of one axis from the name property of the passed data objects.
+So, these names have to be translated every time the user switches the language settings.
+In this case, inject the <code class="docutils literal notranslate"><span class="pre">TranslateService</span></code> to the underlying component and subscribe to the <code class="docutils literal notranslate"><span class="pre">onLangChange</span></code> event emitter:</p></li>
+</ul>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">translateService</span>: <span class="kt">TranslateService</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">translateService</span><span class="p">.</span><span class="nx">onLangChange</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">updateXAxisLabel</span><span class="p">();</span> <span class="c1">// a method re-assigning the names of the objects to the translated string</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
 </ol>
 </div></blockquote>
 <p>Some parts of these guidelines are adapted from <a class="reference external" href="https://github.com/microsoft/TypeScript-wiki/blob/main/Coding-guidelines.md">https://github.com/microsoft/TypeScript-wiki/blob/main/Coding-guidelines.md</a></p>

@@ -68,16 +68,18 @@
 <li class="toctree-l3"><a class="reference internal" href="#proper-annotation-of-sql-query-parameters">17. Proper annotation of SQL query parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sql-statement-formatting">18. SQL statement formatting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#avoid-the-usage-of-sub-queries">19. Avoid the usage of Sub-queries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rest-endpoint-best-practices-for-authorization">20. REST endpoint best practices for authorization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#assert-using-the-most-specific-overload-method">21. Assert using the most specific overload method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#general-testing-tips">22. General Testing Tips</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#avoid-using-mockbean">23. Avoid using &#64;MockBean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#criteria-builder">20. Criteria Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rest-endpoint-best-practices-for-authorization">21. REST endpoint best practices for authorization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assert-using-the-most-specific-overload-method">22. Assert using the most specific overload method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#general-testing-tips">23. General Testing Tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#avoid-using-mockbean">24. Avoid using &#64;MockBean</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../client/">Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../client-tests/">Client Tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../client-design/">Client Theming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/">Database Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../criteria-builder/">Criteria Builder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../development-process/">Development Process (How to Merge Changes)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../language-guidelines/">Inclusive, Diversity-Sensitive, and Appreciative Language</a></li>
 </ul>
@@ -433,8 +435,12 @@ So instead of:</p>
 </div>
 <p>Functionally both queries extract the same result set, but the first one is less efficient as the sub-query is calculated for each StudentParticipation.</p>
 </div>
+<div class="section" id="criteria-builder">
+<h2>20. Criteria Builder<a class="headerlink" href="#criteria-builder" title="Permalink to this headline"></a></h2>
+<p>For more details, please visit the <a class="reference internal" href="../criteria-builder/"><span class="doc">Criteria Builder</span></a> page.</p>
+</div>
 <div class="section" id="rest-endpoint-best-practices-for-authorization">
-<h2>20. REST endpoint best practices for authorization<a class="headerlink" href="#rest-endpoint-best-practices-for-authorization" title="Permalink to this headline"></a></h2>
+<h2>21. REST endpoint best practices for authorization<a class="headerlink" href="#rest-endpoint-best-practices-for-authorization" title="Permalink to this headline"></a></h2>
 <p>To prevent unauthorized access to resources Artemis employs a two-step system:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">PreAuthorize</span></code> annotations are responsible for blocking users with wrong or missing authorization roles without querying the database.</p></li>
@@ -471,7 +477,7 @@ However, do not fetch the user from the database yourself (unless you need to re
 <p>The course repository call takes care of throwing a <code class="docutils literal notranslate"><span class="pre">404</span> <span class="pre">Not</span> <span class="pre">Found</span></code> exception if there exists no matching course. The <code class="docutils literal notranslate"><span class="pre">AuthorizationCheckService</span></code> throws a <code class="docutils literal notranslate"><span class="pre">403</span> <span class="pre">Forbidden</span></code> exception if the user with the given role is unauthorized. Afterwards delegate to a service or repository method. The code becomes much shorter, cleaner and more maintainable.</p>
 </div>
 <div class="section" id="assert-using-the-most-specific-overload-method">
-<h2>21. Assert using the most specific overload method<a class="headerlink" href="#assert-using-the-most-specific-overload-method" title="Permalink to this headline"></a></h2>
+<h2>22. Assert using the most specific overload method<a class="headerlink" href="#assert-using-the-most-specific-overload-method" title="Permalink to this headline"></a></h2>
 <p>When expecting results use <code class="docutils literal notranslate"><span class="pre">assertThat</span></code> for server tests. That call <strong>must</strong> be followed by another assertion statement like <code class="docutils literal notranslate"><span class="pre">isTrue()</span></code>. It is best practice to use more specific assertion statement rather than always expecting boolean values.</p>
 <p>For example, instead of</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">assertThat</span><span class="p">(</span><span class="n">submissionInDb</span><span class="p">.</span><span class="na">isPresent</span><span class="p">()).</span><span class="na">isTrue</span><span class="p">();</span>
@@ -492,7 +498,7 @@ However, do not fetch the user from the database yourself (unless you need to re
 <p>Some parts of these guidelines are adapted from <a class="reference external" href="https://medium.com/&#64;madhupathy/ultimate-clean-code-guide-for-java-spring-based-applications-4d4c9095cc2a">https://medium.com/&#64;madhupathy/ultimate-clean-code-guide-for-java-spring-based-applications-4d4c9095cc2a</a></p>
 </div>
 <div class="section" id="general-testing-tips">
-<h2>22. General Testing Tips<a class="headerlink" href="#general-testing-tips" title="Permalink to this headline"></a></h2>
+<h2>23. General Testing Tips<a class="headerlink" href="#general-testing-tips" title="Permalink to this headline"></a></h2>
 <p>Write meaningful comments for your tests.
 These comments should contain information about what is tested specifically.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
@@ -531,7 +537,7 @@ This is the same reason why you should not name your variables int a, double b, 
 <p>If you want to write tests for Programming Exercises to test student’s submissions check out <a class="reference external" href="https://confluence.ase.in.tum.de/display/ArTEMiS/Best+Practices+for+writing+Java+Programming+Exercise+Tests+in+Artemis">this</a>.</p>
 </div>
 <div class="section" id="avoid-using-mockbean">
-<h2>23. Avoid using &#64;MockBean<a class="headerlink" href="#avoid-using-mockbean" title="Permalink to this headline"></a></h2>
+<h2>24. Avoid using &#64;MockBean<a class="headerlink" href="#avoid-using-mockbean" title="Permalink to this headline"></a></h2>
 <p>Do not use the <code class="docutils literal notranslate"><span class="pre">&#64;SpyBean</span></code> or <code class="docutils literal notranslate"><span class="pre">&#64;MockBean</span></code> annotation unless absolutely necessary, or possibly in an abstract Superclass. If you want to see why in more detail, take a look <a class="reference external" href="https://www.baeldung.com/spring-tests">here</a>.
 Basically, every time <code class="docutils literal notranslate"><span class="pre">&#64;MockBean</span></code> appears in a class, the ApplicationContext cache gets marked as dirty, hence the runner will clean the cache after the test-class is done and restarts the application context.
 This leads to a large overhead, which tends to make the tests take a lot more time.</p>

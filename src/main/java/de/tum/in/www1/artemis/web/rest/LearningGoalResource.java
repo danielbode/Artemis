@@ -15,6 +15,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import de.tum.in.www1.artemis.domain.Course;
+import de.tum.in.www1.artemis.domain.DomainObject;
 import de.tum.in.www1.artemis.domain.LearningGoal;
 import de.tum.in.www1.artemis.domain.User;
 import de.tum.in.www1.artemis.domain.lecture.LectureUnit;
@@ -214,6 +215,17 @@ public class LearningGoalResource {
         learningGoalFromDb.setTitle(learningGoal.getTitle());
         learningGoalFromDb.setDescription(learningGoal.getDescription());
         learningGoalFromDb.setType(learningGoal.getType());
+
+        if (learningGoal.getParentLearningGoal() != null) {
+            var parent = this.learningGoalRepository.findByIdElseThrow(learningGoal.getParentLearningGoal().getId());
+            learningGoalFromDb.setParentLearningGoal(parent);
+        }
+
+        if (!learningGoal.getPresumedLearningGoals().isEmpty()) {
+            var presumed = this.learningGoalRepository.findAllById(learningGoal.getPresumedLearningGoals().stream().map(DomainObject::getId).toList());
+            learningGoalFromDb.setPresumedLearningGoals(Set.copyOf(presumed));
+        }
+
         // exchanging the lecture units send by the client to the corresponding entities from the database
         Set<LectureUnit> lectureUnitsToConnectWithLearningGoal = getLectureUnitsFromDatabase(learningGoal.getLectureUnits());
         // remove lecture units no longer associated with learning goal

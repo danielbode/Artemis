@@ -4,6 +4,19 @@
 </div>
 <div class="modal-body">
     <p *ngIf="learningGoal?.description">{{ learningGoal?.description }}</p>
+
+    <!-- Show parent and presumed learning goals -->
+    <div *ngIf="!!learningGoal.parentLearningGoal">
+        <h5>{{ 'artemisApp.learningGoal.learningGoalCard.parentLearningGoal' | artemisTranslate }}</h5>
+        <p>{{ learningGoal.parentLearningGoal.title }}</p>
+    </div>
+    <div *ngIf="!!learningGoal.presumedLearningGoals">
+        <h5>{{ 'artemisApp.learningGoal.learningGoalCard.presumedLearningGoals' | artemisTranslate }}</h5>
+        <ul>
+            <li *ngFor="let presumed of learningGoal.presumedLearningGoals">{{ presumed.title }}</li>
+        </ul>
+    </div>
+
     <!-- Table for connected lecture units -->
     <ng-template #elseBlock>{{ 'artemisApp.learningGoal.learningGoalCard.noUnitsConnected' | artemisTranslate }}</ng-template>
     <div *ngIf="learningGoal?.lectureUnits && learningGoal!.lectureUnits!.length > 0; else elseBlock">

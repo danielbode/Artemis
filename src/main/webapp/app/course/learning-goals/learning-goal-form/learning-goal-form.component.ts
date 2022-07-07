@@ -8,7 +8,7 @@ import { LectureUnit } from 'app/entities/lecture-unit/lectureUnit.model';
 import { TranslateService } from '@ngx-translate/core';
 import { LectureUnitService } from 'app/lecture/lecture-unit/lecture-unit-management/lectureUnit.service';
 import { intersection } from 'lodash-es';
-import { LearningGoal } from 'app/entities/learningGoal.model';
+import { LearningGoal, LearningGoalType } from 'app/entities/learningGoal.model';
 
 /**
  * Async Validator to make sure that a learning goal title is unique within a course
@@ -43,9 +43,10 @@ export const titleUniqueValidator = (learningGoalService: LearningGoalService, c
 };
 
 export interface LearningGoalFormData {
+    id?: number;
     title?: string;
     description?: string;
-    type?: string;
+    type?: LearningGoalType;
     connectedLectureUnits?: LectureUnit[];
     parentLearningGoal?: LearningGoal;
     presumedLearningGoals?: LearningGoal[];
@@ -59,6 +60,7 @@ export interface LearningGoalFormData {
 export class LearningGoalFormComponent implements OnInit, OnChanges {
     @Input()
     formData: LearningGoalFormData = {
+        id: undefined,
         title: undefined,
         description: undefined,
         type: undefined,
@@ -75,6 +77,7 @@ export class LearningGoalFormComponent implements OnInit, OnChanges {
     lecturesOfCourseWithLectureUnits: Lecture[] = [];
 
     titleUniqueValidator = titleUniqueValidator;
+    learningGoalType = LearningGoalType;
 
     @Output()
     formSubmitted: EventEmitter<LearningGoalFormData> = new EventEmitter<LearningGoalFormData>();
@@ -112,7 +115,7 @@ export class LearningGoalFormComponent implements OnInit, OnChanges {
 
     ngOnInit(): void {
         this.learningGoalService.getAllForCourse(this.courseId).subscribe((res) => {
-            this.learningGoalsOfCourse = res.body ?? [];
+            this.learningGoalsOfCourse = res.body?.filter((learningGoal) => !this.formData.id || learningGoal.id !== this.formData.id) ?? [];
         });
         this.initializeForm();
     }
@@ -128,7 +131,7 @@ export class LearningGoalFormComponent implements OnInit, OnChanges {
         this.form = this.fb.group({
             title: [undefined, [Validators.required, Validators.maxLength(255)], [this.titleUniqueValidator(this.learningGoalService, this.courseId, initialTitle)]],
             description: [undefined, [Validators.maxLength(10000)]],
-            type: [undefined, [Validators.maxLength(255)]],
+            type: [undefined, [Validators.pattern('^(' + Object.keys(this.learningGoalType).join('|') + ')$')]],
             parentLearningGoal: [undefined],
             presumedLearningGoals: [undefined],
         });
@@ -144,7 +147,12 @@ export class LearningGoalFormComponent implements OnInit, OnChanges {
 
     submitForm() {
         const learningGoalFormData: LearningGoalFormData = { ...this.form.value };
+        console.log(learningGoalFormData);
         learningGoalFormData.connectedLectureUnits = this.selectedLectureUnitsInTable;
+        learningGoalFormData.parentLearningGoal = this.learningGoalsOfCourse.find((learningGoal) => learningGoal.id === learningGoalFormData.parentLearningGoal);
+        learningGoalFormData.presumedLearningGoals = learningGoalFormData.presumedLearningGoals?.map(
+            (learningGoal) => this.learningGoalsOfCourse.find((learningGoalOfCourse) => learningGoalOfCourse.id === learningGoal)!,
+        );
         this.formSubmitted.emit(learningGoalFormData);
     }
 

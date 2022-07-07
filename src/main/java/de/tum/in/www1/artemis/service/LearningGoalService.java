@@ -63,7 +63,7 @@ public class LearningGoalService {
      * @return A list of learning goals with their lecture units (filtered for the user).
      */
     public Set<LearningGoal> findAllForCourse(@NotNull Course course, @NotNull User user) {
-        Set<LearningGoal> learningGoals = learningGoalRepository.findAllByCourseIdWithLectureUnitsUnidirectional(course.getId());
+        Set<LearningGoal> learningGoals = learningGoalRepository.findAllByCourseIdWithLectureUnitsAndRelatedLearningGoals(course.getId());
         // if the user is a student the not yet released lecture units need to be filtered out
         if (authCheckService.isOnlyStudentInCourse(course, user)) {
             for (LearningGoal learningGoal : learningGoals) {

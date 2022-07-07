@@ -66,9 +66,13 @@ export class EditLearningGoalComponent implements OnInit {
                     }
 
                     this.formData = {
+                        id: this.learningGoal.id,
                         title: this.learningGoal.title,
                         description: this.learningGoal.description,
                         connectedLectureUnits: this.learningGoal.lectureUnits,
+                        type: this.learningGoal.type,
+                        parentLearningGoal: this.learningGoal.parentLearningGoal,
+                        presumedLearningGoals: this.learningGoal.presumedLearningGoals,
                     };
                 },
                 error: (res: HttpErrorResponse) => onError(this.alertService, res),

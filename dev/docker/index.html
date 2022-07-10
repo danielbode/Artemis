@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Builds and Dependency Management &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
@@ -92,10 +94,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="builds-and-dependency-management">
-<span id="docker"></span><h1>Builds and Dependency Management<a class="headerlink" href="#builds-and-dependency-management" title="Permalink to this headline"></a></h1>
-<div class="section" id="general-structure-of-programming-exercise-execution">
-<h2>General Structure of Programming Exercise Execution<a class="headerlink" href="#general-structure-of-programming-exercise-execution" title="Permalink to this headline"></a></h2>
+  <section id="builds-and-dependency-management">
+<span id="docker"></span><h1>Builds and Dependency Management<a class="headerlink" href="#builds-and-dependency-management" title="Permalink to this heading"></a></h1>
+<section id="general-structure-of-programming-exercise-execution">
+<h2>General Structure of Programming Exercise Execution<a class="headerlink" href="#general-structure-of-programming-exercise-execution" title="Permalink to this heading"></a></h2>
 <p>Artemis uses docker containers to run programming exercises. This ensures that the students’ code does not have direct access to the build agents’ hardware.
 To reduce the time required for each test run, these docker containers already include commonly used dependencies such as JUnit.</p>
 <p>There are currently docker containers for:</p>
@@ -109,9 +111,9 @@ To reduce the time required for each test run, these docker containers already i
 <li><p><a class="reference external" href="https://hub.docker.com/r/tizianleonhardt/era-artemis-assembler">Assembler</a> (external)</p></li>
 <li><p><a class="reference external" href="https://hub.docker.com/r/tizianleonhardt/era-artemis-vhdl">VHDL</a> (external)</p></li>
 </ul>
-</div>
-<div class="section" id="steps-for-updating-the-dockerbuilds-used-in-artemis">
-<h2>Steps for Updating the DockerBuilds used in Artemis<a class="headerlink" href="#steps-for-updating-the-dockerbuilds-used-in-artemis" title="Permalink to this headline"></a></h2>
+</section>
+<section id="steps-for-updating-the-dockerbuilds-used-in-artemis">
+<h2>Steps for Updating the DockerBuilds used in Artemis<a class="headerlink" href="#steps-for-updating-the-dockerbuilds-used-in-artemis" title="Permalink to this heading"></a></h2>
 <p>Updating can only be done with access to the account on Dockerhub. If you need access, contact <a class="reference external" href="mailto:krusche&#37;&#52;&#48;in&#46;tum&#46;de">Stephan Krusche</a>.</p>
 <ol class="arabic">
 <li><p>Update the dependencies via a pull request in the repository of the docker container. Each docker container has its own repository as listed above</p></li>
@@ -130,9 +132,9 @@ To reduce the time required for each test run, these docker containers already i
 <li><p>The “Sourcetype” should be “Tag”</p></li>
 <li><p>This tag should be used as “Source Tag” and “Docker Tag”</p></li>
 </ul>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="Required steps for creating a new build" src="../../_images/new-docker-image-example.png" />
-</div>
+</figure>
 </li>
 <li><p>Go back to the repository of the docker container in GitHub and create a new Tag</p>
 <ul class="simple">
@@ -148,8 +150,8 @@ To reduce the time required for each test run, these docker containers already i
 </ul>
 </li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setup for Programming Exercises with Bamboo, Bitbucket and Jira &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -119,8 +121,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="setup-for-programming-exercises-with-bamboo-bitbucket-and-jira">
-<h1>Setup for Programming Exercises with Bamboo, Bitbucket and Jira<a class="headerlink" href="#setup-for-programming-exercises-with-bamboo-bitbucket-and-jira" title="Permalink to this headline"></a></h1>
+  <section id="setup-for-programming-exercises-with-bamboo-bitbucket-and-jira">
+<h1>Setup for Programming Exercises with Bamboo, Bitbucket and Jira<a class="headerlink" href="#setup-for-programming-exercises-with-bamboo-bitbucket-and-jira" title="Permalink to this heading"></a></h1>
 <p>This page describes how to set up a programming exercise environment
 based on Bamboo, Bitbucket and Jira.</p>
 <div class="line-block">
@@ -152,8 +154,8 @@ setup is present.</p>
 <li><p><a class="reference internal" href="#how-to-verify-the-connection-works" id="id12">How to verify the connection works?</a></p></li>
 </ul>
 </div>
-<div class="section" id="docker-compose">
-<h2><a class="toc-backref" href="#id9">Docker-Compose</a><a class="headerlink" href="#docker-compose" title="Permalink to this headline"></a></h2>
+<section id="docker-compose">
+<h2><a class="toc-backref" href="#id9">Docker-Compose</a><a class="headerlink" href="#docker-compose" title="Permalink to this heading"></a></h2>
 <p>Before you start the docker-compose, check if the bamboo version in the
 <code class="docutils literal notranslate"><span class="pre">build.gradle</span></code> (search for <code class="docutils literal notranslate"><span class="pre">com.atlassian.bamboo:bamboo-specs</span></code>) is
 equal to the bamboo version number in the docker compose in
@@ -169,9 +171,9 @@ command <code class="docutils literal notranslate"><span class="pre">docker</spa
 <p>Make sure that docker has enough memory (~ 6GB). To adapt it, go to <code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">-&gt;</span> <span class="pre">Resources</span></code></p>
 <p>In case you want to enable Swift or C programming exercises, refer to the readme in
 <code class="docutils literal notranslate"><span class="pre">src/main/docker</span></code></p>
-</div>
-<div class="section" id="configure-bamboo-bitbucket-and-jira">
-<h2><a class="toc-backref" href="#id10">Configure Bamboo, Bitbucket and Jira</a><a class="headerlink" href="#configure-bamboo-bitbucket-and-jira" title="Permalink to this headline"></a></h2>
+</section>
+<section id="configure-bamboo-bitbucket-and-jira">
+<h2><a class="toc-backref" href="#id10">Configure Bamboo, Bitbucket and Jira</a><a class="headerlink" href="#configure-bamboo-bitbucket-and-jira" title="Permalink to this heading"></a></h2>
 <p>By default, the Jira instance is reachable under <code class="docutils literal notranslate"><span class="pre">localhost:8081</span></code>, the
 Bamboo instance under <code class="docutils literal notranslate"><span class="pre">localhost:8085</span></code> and the Bitbucket instance
 under <code class="docutils literal notranslate"><span class="pre">localhost:7990</span></code>.</p>
@@ -231,32 +233,44 @@ Bitbucket → Bamboo URl to</strong> <code class="docutils literal notranslate">
 <code class="docutils literal notranslate"><span class="pre">http://localhost:8085</span></code> <strong>.</strong></p>
 <blockquote>
 <div><p><strong>Bamboo:</strong></p>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <img alt="../../../_images/bamboo_bitbucket_applicationLink.png" src="../../../_images/bamboo_bitbucket_applicationLink.png" />
-<p class="caption"><span class="caption-text">Bamboo → Bitbucket</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
-<div class="figure align-center" id="id2">
+<figcaption>
+<p><span class="caption-text">Bamboo → Bitbucket</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
 <img alt="../../../_images/bamboo_jira_applicationLink.png" src="../../../_images/bamboo_jira_applicationLink.png" />
-<p class="caption"><span class="caption-text">Bamboo → Jira</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Bamboo → Jira</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Bitbucket:</strong></p>
-<div class="figure align-center" id="id3">
+<figure class="align-center" id="id3">
 <img alt="../../../_images/bitbucket_bamboo_applicationLink.png" src="../../../_images/bitbucket_bamboo_applicationLink.png" />
-<p class="caption"><span class="caption-text">Bitbucket → Bamboo</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
-</div>
-<div class="figure align-center" id="id4">
+<figcaption>
+<p><span class="caption-text">Bitbucket → Bamboo</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
 <img alt="../../../_images/bitbucket_jira_applicationLink.png" src="../../../_images/bitbucket_jira_applicationLink.png" />
-<p class="caption"><span class="caption-text">Bitbucket → Jira</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Bitbucket → Jira</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p><strong>Jira:</strong></p>
-<div class="figure align-center" id="id5">
+<figure class="align-center" id="id5">
 <img alt="../../../_images/jira_bamboo_applicationLink.png" src="../../../_images/jira_bamboo_applicationLink.png" />
-<p class="caption"><span class="caption-text">Jira → Bamboo</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
-</div>
-<div class="figure align-center" id="id6">
+<figcaption>
+<p><span class="caption-text">Jira → Bamboo</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
 <img alt="../../../_images/jira_bitbucket_applicationLink.png" src="../../../_images/jira_bitbucket_applicationLink.png" />
-<p class="caption"><span class="caption-text">Jira → Bitbucket</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Jira → Bitbucket</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </div></blockquote>
 </li>
 </ul>
@@ -283,13 +297,13 @@ IP-address <code class="docutils literal notranslate"><span class="pre">0.0.0.0/
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><div class="figure align-default">
+<tr class="row-odd"><td><figure class="align-default">
 <img alt="../../../_images/jira_add_application_bitbucket.png" src="../../../_images/jira_add_application_bitbucket.png" />
-</div>
+</figure>
 </td>
-<td><div class="figure align-default">
+<td><figure class="align-default">
 <img alt="../../../_images/jira_add_application_bamboo.png" src="../../../_images/jira_add_application_bamboo.png" />
-</div>
+</figure>
 </td>
 </tr>
 </tbody>
@@ -310,15 +324,19 @@ groups should now be available.</p></li>
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><div class="figure align-default" id="id7">
+<tr class="row-odd"><td><figure class="align-default" id="id7">
 <img alt="../../../_images/user_directories_bitbucket.png" src="../../../_images/user_directories_bitbucket.png" />
-<p class="caption"><span class="caption-text">Adding Crowd Server in <strong>Bitbucket</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Adding Crowd Server in <strong>Bitbucket</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </td>
-<td><div class="figure align-default" id="id8">
+<td><figure class="align-default" id="id8">
 <img alt="../../../_images/user_directories_bamboo.png" src="../../../_images/user_directories_bamboo.png" />
-<p class="caption"><span class="caption-text">Adding Crowd Server in <strong>Bamboo</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Adding Crowd Server in <strong>Bamboo</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </td>
 </tr>
 </tbody>
@@ -354,9 +372,9 @@ be removed in the future.</p>
 <ul>
 <li><p>Log in as the admin user and go to Bamboo -&gt; Profile (top right corner) -&gt; Personal access tokens -&gt; Create token</p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/bamboo-create-token.png" src="../../../_images/bamboo-create-token.png" />
-</div>
+</figure>
 </div></blockquote>
 </li>
 <li><p>Insert the generated token into the file <code class="docutils literal notranslate"><span class="pre">application-artemis.yml</span></code> in the section <code class="docutils literal notranslate"><span class="pre">continuous-integration</span></code>:</p></li>
@@ -375,9 +393,9 @@ be removed in the future.</p>
 <div><ul>
 <li><p>Log in as the admin user and go to Bitbucket -&gt; View Profile (top right corner) -&gt; Manage account -&gt; Personal access tokens -&gt; Create token</p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/bitbucket-create-token.png" src="../../../_images/bitbucket-create-token.png" />
-</div>
+</figure>
 </div></blockquote>
 </li>
 <li><p>Insert the generated token into the file <code class="docutils literal notranslate"><span class="pre">application-artemis.yml</span></code> in the section <code class="docutils literal notranslate"><span class="pre">version-control</span></code>:</p></li>
@@ -408,9 +426,9 @@ Open the public key file (usually called <code class="docutils literal notransla
 </div></blockquote>
 </li>
 </ol>
-</div>
-<div class="section" id="configure-artemis">
-<h2><a class="toc-backref" href="#id11">Configure Artemis</a><a class="headerlink" href="#configure-artemis" title="Permalink to this headline"></a></h2>
+</section>
+<section id="configure-artemis">
+<h2><a class="toc-backref" href="#id11">Configure Artemis</a><a class="headerlink" href="#configure-artemis" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Modify <code class="docutils literal notranslate"><span class="pre">src/main/resources/config/application-artemis.yml</span></code></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">repo-clone-path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./repos/</span>
@@ -463,35 +481,35 @@ e.g.:</p>
 </pre></div>
 </div>
 <p>Please read <a class="reference internal" href="../"><span class="doc">Setup Guide</span></a> for more details.</p>
-</div>
-<div class="section" id="how-to-verify-the-connection-works">
-<h2><a class="toc-backref" href="#id12">How to verify the connection works?</a><a class="headerlink" href="#how-to-verify-the-connection-works" title="Permalink to this headline"></a></h2>
-<div class="section" id="artemis-jira">
-<h3>Artemis → Jira<a class="headerlink" href="#artemis-jira" title="Permalink to this headline"></a></h3>
+</section>
+<section id="how-to-verify-the-connection-works">
+<h2><a class="toc-backref" href="#id12">How to verify the connection works?</a><a class="headerlink" href="#how-to-verify-the-connection-works" title="Permalink to this heading"></a></h2>
+<section id="artemis-jira">
+<h3>Artemis → Jira<a class="headerlink" href="#artemis-jira" title="Permalink to this heading"></a></h3>
 <p>You can login to Artemis with the admin user you created in Jira</p>
-</div>
-<div class="section" id="artemis-bitbucket">
-<h3>Artemis → Bitbucket<a class="headerlink" href="#artemis-bitbucket" title="Permalink to this headline"></a></h3>
+</section>
+<section id="artemis-bitbucket">
+<h3>Artemis → Bitbucket<a class="headerlink" href="#artemis-bitbucket" title="Permalink to this heading"></a></h3>
 <p>You can create a programming exercise</p>
-</div>
-<div class="section" id="artemis-bamboo">
-<h3>Artemis → Bamboo<a class="headerlink" href="#artemis-bamboo" title="Permalink to this headline"></a></h3>
+</section>
+<section id="artemis-bamboo">
+<h3>Artemis → Bamboo<a class="headerlink" href="#artemis-bamboo" title="Permalink to this heading"></a></h3>
 <p>You can create a programming exercise</p>
-</div>
-<div class="section" id="bitbucket-bamboo">
-<h3>Bitbucket → Bamboo<a class="headerlink" href="#bitbucket-bamboo" title="Permalink to this headline"></a></h3>
+</section>
+<section id="bitbucket-bamboo">
+<h3>Bitbucket → Bamboo<a class="headerlink" href="#bitbucket-bamboo" title="Permalink to this heading"></a></h3>
 <p>The build of the students repository gets started after pushing to it</p>
-</div>
-<div class="section" id="bitbucket-artemis">
-<h3>Bitbucket → Artemis<a class="headerlink" href="#bitbucket-artemis" title="Permalink to this headline"></a></h3>
+</section>
+<section id="bitbucket-artemis">
+<h3>Bitbucket → Artemis<a class="headerlink" href="#bitbucket-artemis" title="Permalink to this heading"></a></h3>
 <p>When using the code editor, after clicking on <em>Submit</em>, the text <em>Building and testing…</em> should appear.</p>
-</div>
-<div class="section" id="bamboo-artemis">
-<h3>Bamboo → Artemis<a class="headerlink" href="#bamboo-artemis" title="Permalink to this headline"></a></h3>
+</section>
+<section id="bamboo-artemis">
+<h3>Bamboo → Artemis<a class="headerlink" href="#bamboo-artemis" title="Permalink to this heading"></a></h3>
 <p>The build result is displayed in the code editor.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

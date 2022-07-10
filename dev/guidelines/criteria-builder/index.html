@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Criteria Builder &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -109,10 +111,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="criteria-builder">
-<h1>Criteria Builder<a class="headerlink" href="#criteria-builder" title="Permalink to this headline"></a></h1>
-<div class="section" id="requirements">
-<h2>1. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
+  <section id="criteria-builder">
+<h1>Criteria Builder<a class="headerlink" href="#criteria-builder" title="Permalink to this heading"></a></h1>
+<section id="requirements">
+<h2>1. Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>In order to use Criteria Builder and benefit from Specifications, we need to adjust the Repository.</p>
 <ol class="arabic">
 <li><p><strong>Metamodel:</strong> The metamodel is used to refer to the columns of a table, in an object-oriented way. For this, each entity needs to have a corresponding metamodel class. (Artemis already fulfills this requirement)</p>
@@ -156,9 +158,9 @@
 </div></blockquote>
 </li>
 </ol>
-</div>
-<div class="section" id="generating-the-query">
-<h2>2. Generating the query<a class="headerlink" href="#generating-the-query" title="Permalink to this headline"></a></h2>
+</section>
+<section id="generating-the-query">
+<h2>2. Generating the query<a class="headerlink" href="#generating-the-query" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p><strong>Query Generation:</strong> In most occasions, it is sufficient to execute any one of the following methods:</p>
 <blockquote>
@@ -215,9 +217,9 @@
 </div></blockquote>
 </li>
 </ol>
-</div>
-<div class="section" id="operations">
-<h2>3. Operations<a class="headerlink" href="#operations" title="Permalink to this headline"></a></h2>
+</section>
+<section id="operations">
+<h2>3. Operations<a class="headerlink" href="#operations" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p><strong>AND:</strong> We can perform the <code class="docutils literal notranslate"><span class="pre">and</span></code> operation on an arbitrary number of predicates via the <code class="docutils literal notranslate"><span class="pre">criteriaBuilder</span></code> object, which results in a new <code class="docutils literal notranslate"><span class="pre">Predicate</span></code>.</p>
 <blockquote>
@@ -278,9 +280,9 @@
 </div></blockquote>
 </li>
 </ul>
-</div>
-<div class="section" id="joins">
-<h2>4. Joins<a class="headerlink" href="#joins" title="Permalink to this headline"></a></h2>
+</section>
+<section id="joins">
+<h2>4. Joins<a class="headerlink" href="#joins" title="Permalink to this heading"></a></h2>
 <p>Different joins are available (e.g. Join, ListJoin, SetJoin, CollectionJoin, …) - please choose the right one.</p>
 <ul>
 <li><p>If we want to join from X to Y, we need to define the column and the join type. Please mind that when the join type is not specified an Inner Join is made by default.</p>
@@ -306,9 +308,9 @@
 </div></blockquote>
 </li>
 </ul>
-</div>
-<div class="section" id="sub-queries">
-<h2>5. Sub-Queries<a class="headerlink" href="#sub-queries" title="Permalink to this headline"></a></h2>
+</section>
+<section id="sub-queries">
+<h2>5. Sub-Queries<a class="headerlink" href="#sub-queries" title="Permalink to this heading"></a></h2>
 <p>Sub-queries are usually fine unless they are dependent sub-queries (also known as <a class="reference external" href="https://en.wikipedia.org/wiki/Correlated_subquery">correlated</a> sub queries).</p>
 <ol class="arabic simple">
 <li><dl class="simple">
@@ -323,9 +325,9 @@
 </li>
 </ol>
 <p>You can find additional information on dependent sub-queries and how to identify them <a class="reference external" href="https://stackoverflow.com/questions/4799820/when-to-use-sql-sub-queries-versus-a-standard-join/4799847#4799847">here</a>.</p>
-</div>
-<div class="section" id="examples">
-<h2>6. Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
+</section>
+<section id="examples">
+<h2>6. Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>Specification that matches the specified string:</p>
 <blockquote>
@@ -411,24 +413,24 @@
 </div></blockquote>
 </li>
 </ul>
-</div>
-<div class="section" id="limitations">
-<h2>7. Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline"></a></h2>
+</section>
+<section id="limitations">
+<h2>7. Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Executing simple queries becomes more complex — but reusable.</p></li>
 <li><p>Multiple “group by” are not combined but overwritten → you need a specification that combines them.</p></li>
 <li><p>Pagination feature of Spring Data JPA does not support the use of specifications with “group by”. See <a class="reference external" href="https://github.com/spring-projects/spring-data-jpa/issues/2361">issue</a>.</p></li>
 </ul>
-</div>
-<div class="section" id="additional-links">
-<h2>8. Additional links<a class="headerlink" href="#additional-links" title="Permalink to this headline"></a></h2>
+</section>
+<section id="additional-links">
+<h2>8. Additional links<a class="headerlink" href="#additional-links" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://spring.io/blog/2011/04/26/advanced-spring-data-jpa-specifications-and-querydsl">https://spring.io/blog/2011/04/26/advanced-spring-data-jpa-specifications-and-querydsl</a></p></li>
 <li><p><a class="reference external" href="https://www.baeldung.com/hibernate-criteria-queries">https://www.baeldung.com/hibernate-criteria-queries</a></p></li>
 <li><p><a class="reference external" href="https://docs.oracle.com/javaee/7/api/javax/persistence/criteria/CriteriaBuilder.html">https://docs.oracle.com/javaee/7/api/javax/persistence/criteria/CriteriaBuilder.html</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setup Guide &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
@@ -137,8 +139,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="setup-guide">
-<h1>Setup Guide<a class="headerlink" href="#setup-guide" title="Permalink to this headline"></a></h1>
+  <section id="setup-guide">
+<h1>Setup Guide<a class="headerlink" href="#setup-guide" title="Permalink to this heading"></a></h1>
 <p>In this guide you learn how to setup the development environment of
 Artemis. Artemis is based on <a class="reference external" href="https://jhipster.github.io">JHipster</a>,
 i.e. <a class="reference external" href="http://projects.spring.io/spring-boot">Spring Boot</a>
@@ -180,8 +182,8 @@ can install Node either from source or as a pre-packaged bundle.</p></li>
 manage client side dependencies. Npm is typically bundled with Node.js,
 but can also be installed separately.</p></li>
 </ol>
-<div class="section" id="mysql-setup">
-<h2>MySQL Setup<a class="headerlink" href="#mysql-setup" title="Permalink to this headline"></a></h2>
+<section id="mysql-setup">
+<h2>MySQL Setup<a class="headerlink" href="#mysql-setup" title="Permalink to this heading"></a></h2>
 <p>If you run your own MySQL server, make sure to specify the default <code class="docutils literal notranslate"><span class="pre">character-set</span></code>
 as <code class="docutils literal notranslate"><span class="pre">utf8mb4</span></code> and the default <code class="docutils literal notranslate"><span class="pre">collation</span></code> as <code class="docutils literal notranslate"><span class="pre">utf8mb4_unicode_ci</span></code>.
 You can achieve this e.g. by using a <code class="docutils literal notranslate"><span class="pre">my.cnf</span></code> file in the location <code class="docutils literal notranslate"><span class="pre">/etc</span></code>.</p>
@@ -198,17 +200,17 @@ You can achieve this e.g. by using a <code class="docutils literal notranslate">
 </div>
 <p>Make sure the configuration file is used by MySQL when you start the server.
 You can find more information on <a class="reference external" href="https://dev.mysql.com/doc/refman/8.0/en/option-files.html">https://dev.mysql.com/doc/refman/8.0/en/option-files.html</a></p>
-<div class="section" id="set-empty-root-password-for-mysql-8">
-<h3>Set empty root password for MySQL 8<a class="headerlink" href="#set-empty-root-password-for-mysql-8" title="Permalink to this headline"></a></h3>
+<section id="set-empty-root-password-for-mysql-8">
+<h3>Set empty root password for MySQL 8<a class="headerlink" href="#set-empty-root-password-for-mysql-8" title="Permalink to this heading"></a></h3>
 <p>If you have problems connecting to the MySQL 8 database using an empty root password, you can try the following command to reset the root password to an empty password:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">--</span><span class="n">execute</span> <span class="s2">&quot;ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH caching_sha2_password BY &#39;&#39;&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Note: this should only be used in a development environment. The root password for a production environment should never be empty.</p>
-</div>
-</div>
-<div class="section" id="server-setup">
-<h2>Server Setup<a class="headerlink" href="#server-setup" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="server-setup">
+<h2>Server Setup<a class="headerlink" href="#server-setup" title="Permalink to this heading"></a></h2>
 <p>To start the Artemis application server from the development
 environment, first import the project into IntelliJ and then make sure
 to install the Spring Boot plugins to run the main class
@@ -330,8 +332,8 @@ configuration if you need additional customizations.</p>
 </div>
 <p>If you use a password, you need to adapt it in
 <code class="docutils literal notranslate"><span class="pre">gradle/liquibase.gradle</span></code>.</p>
-<div class="section" id="run-the-server-via-a-service-configuration">
-<h3>Run the server via a service configuration<a class="headerlink" href="#run-the-server-via-a-service-configuration" title="Permalink to this headline"></a></h3>
+<section id="run-the-server-via-a-service-configuration">
+<h3>Run the server via a service configuration<a class="headerlink" href="#run-the-server-via-a-service-configuration" title="Permalink to this heading"></a></h3>
 <p>This setup is recommended for production instances as it registers Artemis as a service and e.g. enables auto-restarting of Artemis after the VM running Artemis has been restarted.
 As alternative you could take a look at the section below about <a class="reference external" href="#run-the-server-via-docker">deploying artemis as docker container</a>.
 For development setups, see the other guides below.</p>
@@ -377,9 +379,9 @@ For development setups, see the other guides below.</p>
 <p>The file should be placed at <code class="docutils literal notranslate"><span class="pre">/etc/systemd/system/artemis.service</span></code> and after running <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">daemon-reload</span></code>, you can start the service using <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">artemis</span> <span class="pre">start</span></code>.</p>
 <p>You can stop the service using <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">artemis</span> <span class="pre">stop</span></code> and restart it using <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">artemis</span> <span class="pre">restart</span></code>.</p>
 <p>Logs can be fetched using <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">journalctl</span> <span class="pre">-u</span> <span class="pre">artemis</span> <span class="pre">-f</span> <span class="pre">-n</span> <span class="pre">200</span></code>.</p>
-</div>
-<div class="section" id="run-the-server-via-docker">
-<h3>Run the server via Docker<a class="headerlink" href="#run-the-server-via-docker" title="Permalink to this headline"></a></h3>
+</section>
+<section id="run-the-server-via-docker">
+<h3>Run the server via Docker<a class="headerlink" href="#run-the-server-via-docker" title="Permalink to this heading"></a></h3>
 <p>Artemis provides a Docker image named <code class="docutils literal notranslate"><span class="pre">ghcr.io/ls1intum/artemis:&lt;VERSION&gt;</span></code>.
 The current develop branch will be deployed as <code class="docutils literal notranslate"><span class="pre">latest</span></code> version.
 Releases like <code class="docutils literal notranslate"><span class="pre">5.7.1</span></code> are deployed as <code class="docutils literal notranslate"><span class="pre">ghcr.io/ls1intum/artemis:5.7.1</span></code>.
@@ -497,9 +499,9 @@ You could use a compose file similar to this (as an example this deployment uses
 </div></blockquote>
 </li>
 </ul>
-</div>
-<div class="section" id="run-the-server-via-a-run-configuration-in-intellij">
-<h3>Run the server via a run configuration in IntelliJ<a class="headerlink" href="#run-the-server-via-a-run-configuration-in-intellij" title="Permalink to this headline"></a></h3>
+</section>
+<section id="run-the-server-via-a-run-configuration-in-intellij">
+<h3>Run the server via a run configuration in IntelliJ<a class="headerlink" href="#run-the-server-via-a-run-configuration-in-intellij" title="Permalink to this heading"></a></h3>
 <p>The project comes with some pre-configured run / debug configurations that are stored in the <code class="docutils literal notranslate"><span class="pre">.idea</span></code> directory.
 When you import the project into IntelliJ the run configurations will also be imported.</p>
 <p>The recommended way is to run the server and the client separated. This provides fast rebuilds of the server and hot module replacement in the client.</p>
@@ -507,17 +509,17 @@ When you import the project into IntelliJ the run configurations will also be im
 <li><p><strong>Artemis (Server):</strong> The server will be started separated from the client. The startup time decreases significantly.</p></li>
 <li><p><strong>Artemis (Client):</strong> Will execute <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code> and <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">serve</span></code>. The client will be available at <a class="reference external" href="http://localhost:9000/">http://localhost:9000/</a> with hot module replacement enabled (also see <a class="reference external" href="#client-setup">Client Setup</a>).</p></li>
 </ul>
-<div class="section" id="other-run-debug-configurations">
-<h4>Other run / debug configurations<a class="headerlink" href="#other-run-debug-configurations" title="Permalink to this headline"></a></h4>
+<section id="other-run-debug-configurations">
+<h4>Other run / debug configurations<a class="headerlink" href="#other-run-debug-configurations" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p><strong>Artemis (Server &amp; Client):</strong> Will start the server and the client. The client will be available at <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a> with hot module replacement disabled.</p></li>
 <li><p><strong>Artemis (Server, Jenkins &amp; Gitlab):</strong> The server will be started separated from the client with the profiles <code class="docutils literal notranslate"><span class="pre">dev,jenkins,gitlab,artemis</span></code> instead of <code class="docutils literal notranslate"><span class="pre">dev,bamboo,bitbucket,jira,artemis</span></code>.</p></li>
 <li><p><strong>Artemis (Server, Athene):</strong> The server will be started separated from the client with <code class="docutils literal notranslate"><span class="pre">athene</span></code> profile enabled (see <a class="reference external" href="#athene-service">Athene Service</a>).</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="run-the-server-with-spring-boot-and-spring-profiles">
-<h3>Run the server with Spring Boot and Spring profiles<a class="headerlink" href="#run-the-server-with-spring-boot-and-spring-profiles" title="Permalink to this headline"></a></h3>
+</section>
+</section>
+<section id="run-the-server-with-spring-boot-and-spring-profiles">
+<h3>Run the server with Spring Boot and Spring profiles<a class="headerlink" href="#run-the-server-with-spring-boot-and-spring-profiles" title="Permalink to this heading"></a></h3>
 <p>The Artemis server should startup by running the main class
 <code class="docutils literal notranslate"><span class="pre">de.tum.in.www1.artemis.ArtemisApp</span></code> using Spring Boot.</p>
 <div class="admonition note">
@@ -539,18 +541,18 @@ profiles by</p>
 <li><p>Expanding the <code class="docutils literal notranslate"><span class="pre">Environment</span></code> section to reveal <code class="docutils literal notranslate"><span class="pre">VM</span> <span class="pre">Options</span></code> and setting them to
 <code class="docutils literal notranslate"><span class="pre">-Dspring.profiles.active=dev,bamboo,bitbucket,jira,artemis,scheduling</span></code></p></li>
 </ul>
-<div class="section" id="set-spring-profiles-with-intellij-ultimate">
-<h4>Set Spring profiles with IntelliJ Ultimate<a class="headerlink" href="#set-spring-profiles-with-intellij-ultimate" title="Permalink to this headline"></a></h4>
+<section id="set-spring-profiles-with-intellij-ultimate">
+<h4>Set Spring profiles with IntelliJ Ultimate<a class="headerlink" href="#set-spring-profiles-with-intellij-ultimate" title="Permalink to this heading"></a></h4>
 <p>If you use IntelliJ Ultimate, add the following entry to the section
 <code class="docutils literal notranslate"><span class="pre">Active</span> <span class="pre">Profiles</span></code> (within <code class="docutils literal notranslate"><span class="pre">Spring</span> <span class="pre">Boot</span></code>) in the server run
 configuration:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span><span class="p">,</span><span class="n">bamboo</span><span class="p">,</span><span class="n">bitbucket</span><span class="p">,</span><span class="n">jira</span><span class="p">,</span><span class="n">artemis</span><span class="p">,</span><span class="n">scheduling</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="run-the-server-with-the-command-line-gradle-wrapper">
-<h3>Run the server with the command line (Gradle wrapper)<a class="headerlink" href="#run-the-server-with-the-command-line-gradle-wrapper" title="Permalink to this headline"></a></h3>
+</section>
+</section>
+<section id="run-the-server-with-the-command-line-gradle-wrapper">
+<h3>Run the server with the command line (Gradle wrapper)<a class="headerlink" href="#run-the-server-with-the-command-line-gradle-wrapper" title="Permalink to this heading"></a></h3>
 <p>If you want to run the application via the command line instead, make
 sure to pass the active profiles to the <code class="docutils literal notranslate"><span class="pre">gradlew</span></code> command like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">gradlew</span> <span class="n">bootRun</span> <span class="o">--</span><span class="n">args</span><span class="o">=</span><span class="s1">&#39;--spring.profiles.active=dev,bamboo,bitbucket,jira,artemis,scheduling&#39;</span>
@@ -561,9 +563,9 @@ internal user management in Artemis, then you would use the profiles:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span><span class="p">,</span><span class="n">jenkins</span><span class="p">,</span><span class="n">gitlab</span><span class="p">,</span><span class="n">artemis</span><span class="p">,</span><span class="n">scheduling</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="configure-text-assessment-analytics-service">
-<h3>Configure Text Assessment Analytics Service:<a class="headerlink" href="#configure-text-assessment-analytics-service" title="Permalink to this headline"></a></h3>
+</section>
+<section id="configure-text-assessment-analytics-service">
+<h3>Configure Text Assessment Analytics Service:<a class="headerlink" href="#configure-text-assessment-analytics-service" title="Permalink to this heading"></a></h3>
 <p>Text Assessment Analytics is an internal analytics service used to gather data regarding the features of the text assessment process. Certain assessment events are tracked:</p>
 <ol class="arabic simple">
 <li><p>Adding new feedback on a manually selected block</p></li>
@@ -584,13 +586,13 @@ This feature is disabled by default. We can enable it by modifying the configura
    <span class="nt">text-assessment-analytics-enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="client-setup">
-<h2>Client Setup<a class="headerlink" href="#client-setup" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="client-setup">
+<h2>Client Setup<a class="headerlink" href="#client-setup" title="Permalink to this heading"></a></h2>
 <p>You need to install Node and Npm on your local machine.</p>
-<div class="section" id="using-intellij">
-<h3>Using IntelliJ<a class="headerlink" href="#using-intellij" title="Permalink to this headline"></a></h3>
+<section id="using-intellij">
+<h3>Using IntelliJ<a class="headerlink" href="#using-intellij" title="Permalink to this heading"></a></h3>
 <p>If you are using <strong>IntelliJ</strong> you can use the pre-configured <code class="docutils literal notranslate"><span class="pre">Artemis</span> <span class="pre">(Client)</span></code>
 run configuration that will be delivered with this repository:</p>
 <ul class="simple">
@@ -598,9 +600,9 @@ run configuration that will be delivered with this repository:</p>
 <li><p>Select the <code class="docutils literal notranslate"><span class="pre">Artemis</span> <span class="pre">(Client)</span></code> configuration from the <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">section</span></code></p></li>
 <li><p>Now you can run the configuration in the upper right corner of IntelliJ</p></li>
 </ul>
-</div>
-<div class="section" id="using-the-command-line">
-<span id="usingthecommandline"></span><h3>Using the command line<a class="headerlink" href="#using-the-command-line" title="Permalink to this headline"></a></h3>
+</section>
+<section id="using-the-command-line">
+<span id="usingthecommandline"></span><h3>Using the command line<a class="headerlink" href="#using-the-command-line" title="Permalink to this heading"></a></h3>
 <p>You should be able to run the following
 command to install development tools and dependencies. You will only
 need to run this command when dependencies change in <code class="docutils literal notranslate"><span class="pre">package.json</span></code>.</p>
@@ -638,10 +640,10 @@ Angular</a>.
 For further instructions on how to develop with JHipster, have a look at
 <a class="reference external" href="http://www.jhipster.tech/development">Using JHipster in
 development</a>.</p>
-</div>
-</div>
-<div class="section" id="customize-your-artemis-instance">
-<h2>Customize your Artemis instance<a class="headerlink" href="#customize-your-artemis-instance" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="customize-your-artemis-instance">
+<h2>Customize your Artemis instance<a class="headerlink" href="#customize-your-artemis-instance" title="Permalink to this heading"></a></h2>
 <p>You can define the following custom assets for Artemis to be used
 instead of the TUM defaults:</p>
 <ul class="simple">
@@ -651,9 +653,9 @@ instead of the TUM defaults:</p>
 <li><p>The imprint statement HTML → <code class="docutils literal notranslate"><span class="pre">${artemisRunDirectory}/public/content/imprint.html</span></code></p></li>
 <li><p>The contact email address in the <code class="docutils literal notranslate"><span class="pre">application-{dev,prod}.yml</span></code> configuration file under the key <code class="docutils literal notranslate"><span class="pre">info.contact</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="alternative-using-docker-compose">
-<h2>Alternative: Using docker-compose<a class="headerlink" href="#alternative-using-docker-compose" title="Permalink to this headline"></a></h2>
+</section>
+<section id="alternative-using-docker-compose">
+<h2>Alternative: Using docker-compose<a class="headerlink" href="#alternative-using-docker-compose" title="Permalink to this heading"></a></h2>
 <p>A full functioning development environment can also be set up using
 docker-compose:</p>
 <ol class="arabic simple">
@@ -669,37 +671,37 @@ of changes in the codebase of the server one has to restart the
 <code class="docutils literal notranslate"><span class="pre">artemis-server</span></code> container via
 <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">restart</span> <span class="pre">artemis-server</span></code>.</p>
 <p>(Native) Running and Debugging from IDEs is currently not supported.</p>
-<div class="section" id="get-a-shell-into-the-containers">
-<h3>Get a shell into the containers:<a class="headerlink" href="#get-a-shell-into-the-containers" title="Permalink to this headline"></a></h3>
+<section id="get-a-shell-into-the-containers">
+<h3>Get a shell into the containers:<a class="headerlink" href="#get-a-shell-into-the-containers" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>app container:
 <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">$(docker-compose</span> <span class="pre">ps</span> <span class="pre">-q</span> <span class="pre">artemis-app)</span> <span class="pre">sh</span></code></p></li>
 <li><p>mysql container:
 <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">$(docker-compose</span> <span class="pre">ps</span> <span class="pre">-q</span> <span class="pre">artemis-mysql)</span> <span class="pre">mysql</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="other-useful-commands">
-<h3>Other useful commands:<a class="headerlink" href="#other-useful-commands" title="Permalink to this headline"></a></h3>
+</section>
+<section id="other-useful-commands">
+<h3>Other useful commands:<a class="headerlink" href="#other-useful-commands" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Stop the server: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">stop</span> <span class="pre">artemis-server</span></code> (restart via
 <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">start</span> <span class="pre">artemis-server</span></code>)</p></li>
 <li><p>Stop the client: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">stop</span> <span class="pre">artemis-client</span></code> (restart via
 <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">start</span> <span class="pre">artemis-client</span></code>)</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="athene-service">
-<h2>Athene Service<a class="headerlink" href="#athene-service" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="athene-service">
+<h2>Athene Service<a class="headerlink" href="#athene-service" title="Permalink to this heading"></a></h2>
 <p>The semi-automatic text assessment relies on the <a class="reference external" href="https://github.com/ls1intum/Athene">Athene</a> service.
 To enable automatic text assessments, special configuration is required:</p>
-<div class="section" id="enable-the-athene-spring-profile">
-<h3>Enable the <code class="docutils literal notranslate"><span class="pre">athene</span></code> Spring profile:<a class="headerlink" href="#enable-the-athene-spring-profile" title="Permalink to this headline"></a></h3>
+<section id="enable-the-athene-spring-profile">
+<h3>Enable the <code class="docutils literal notranslate"><span class="pre">athene</span></code> Spring profile:<a class="headerlink" href="#enable-the-athene-spring-profile" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">spring</span><span class="o">.</span><span class="n">profiles</span><span class="o">.</span><span class="n">active</span><span class="o">=</span><span class="n">dev</span><span class="p">,</span><span class="n">bamboo</span><span class="p">,</span><span class="n">bitbucket</span><span class="p">,</span><span class="n">jira</span><span class="p">,</span><span class="n">artemis</span><span class="p">,</span><span class="n">scheduling</span><span class="p">,</span><span class="n">athene</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="configure-api-endpoints">
-<h3>Configure API Endpoints:<a class="headerlink" href="#configure-api-endpoints" title="Permalink to this headline"></a></h3>
+</section>
+<section id="configure-api-endpoints">
+<h3>Configure API Endpoints:<a class="headerlink" href="#configure-api-endpoints" title="Permalink to this heading"></a></h3>
 <p>The Athene service is running on a dedicated machine and is addressed via
 HTTP. We need to extend the configuration in the file
 <code class="docutils literal notranslate"><span class="pre">src/main/resources/config/application-artemis.yml</span></code> like so:</p>
@@ -711,20 +713,20 @@ HTTP. We need to extend the configuration in the file
     <span class="nt">token-validity-in-seconds</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10800</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="apollon-service">
-<h2>Apollon Service<a class="headerlink" href="#apollon-service" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="apollon-service">
+<h2>Apollon Service<a class="headerlink" href="#apollon-service" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference external" href="https://github.com/ls1intum/Apollon_converter">Apollon Converter</a> is needed to convert models from their JSON representaiton to PDF.
 Special configuration is required:</p>
-<div class="section" id="enable-the-apollon-spring-profile">
-<h3>Enable the <code class="docutils literal notranslate"><span class="pre">apollon</span></code> Spring profile:<a class="headerlink" href="#enable-the-apollon-spring-profile" title="Permalink to this headline"></a></h3>
+<section id="enable-the-apollon-spring-profile">
+<h3>Enable the <code class="docutils literal notranslate"><span class="pre">apollon</span></code> Spring profile:<a class="headerlink" href="#enable-the-apollon-spring-profile" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">spring</span><span class="o">.</span><span class="n">profiles</span><span class="o">.</span><span class="n">active</span><span class="o">=</span><span class="n">dev</span><span class="p">,</span><span class="n">bamboo</span><span class="p">,</span><span class="n">bitbucket</span><span class="p">,</span><span class="n">jira</span><span class="p">,</span><span class="n">artemis</span><span class="p">,</span><span class="n">scheduling</span><span class="p">,</span><span class="n">apollon</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id1">
-<h3>Configure API Endpoints:<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+</section>
+<section id="id1">
+<h3>Configure API Endpoints:<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <p>The Apollon conversion service is running on a dedicated machine and is adressed via
 HTTP. We need to extend the configuration in the file
 <code class="docutils literal notranslate"><span class="pre">src/main/resources/config/application-artemis.yml</span></code> like so:</p>
@@ -732,9 +734,9 @@ HTTP. We need to extend the configuration in the file
    <span class="nt">conversion-service-url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">http://localhost:8080</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

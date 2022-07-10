@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shibboleth/SAML2 Login &amp; Registration &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
@@ -88,8 +90,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="shibboleth-saml2-login-registration">
-<h1>Shibboleth/SAML2 Login &amp; Registration<a class="headerlink" href="#shibboleth-saml2-login-registration" title="Permalink to this headline"></a></h1>
+  <section id="shibboleth-saml2-login-registration">
+<h1>Shibboleth/SAML2 Login &amp; Registration<a class="headerlink" href="#shibboleth-saml2-login-registration" title="Permalink to this heading"></a></h1>
 <p>Artemis supports user login and registration using SAML2 / Shibboleth.
 The SAML2 feature is intended for use with Artemis’ internal user management and primarily serves as a registration mechanism.
 With the help of this feature it is possible to store not only the login, name and email, but also the <strong>student’s matriculation number</strong> directly in the database.
@@ -100,18 +102,18 @@ For each user who registers in the system for the first time, a “normal” art
 <li><p>For testing you can use a <a class="reference external" href="https://github.com/kit-sdq/Artemis-SAML2-Test-Docker">preconfigured environment</a>.</p></li>
 </ul>
 <p>If you activate the SAML2 Feature an additional login button will be activated (you can set the text of the button as you like):</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="SAML2 Login" src="../../_images/SAML2-Login.png" />
-</div>
+</figure>
 <p>The workflow of the SAML2 feature is shown in the following picture:</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="SAML2 Workflow" src="../../_images/SAML2-Workflow.png" />
-</div>
+</figure>
 <p>The SAML2 library of Spring Boot is used to create a second security filter chain.
 The new (and old) security filter chain is presented in the following figure:</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="SAML2 Filterchain" src="../../_images/SAML2-Filterchain.png" />
-</div>
+</figure>
 <p>The feature is configured by the application-saml2.yml file.
 You can configure multiple identity providers.
 In addition, the SAML2 feature allows to decide whether a user can obtain a password (see “info.saml2.enable-password”).
@@ -160,7 +162,7 @@ This app password allows to use the connected services as VCS and CI as usual wi
 <span class="nt">info.saml2.enable-password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

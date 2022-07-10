@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Common Setup Problems &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -117,10 +119,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="common-setup-problems">
-<h1>Common Setup Problems<a class="headerlink" href="#common-setup-problems" title="Permalink to this headline"></a></h1>
-<div class="section" id="general-setup-problems">
-<h2>General Setup Problems<a class="headerlink" href="#general-setup-problems" title="Permalink to this headline"></a></h2>
+  <section id="common-setup-problems">
+<h1>Common Setup Problems<a class="headerlink" href="#common-setup-problems" title="Permalink to this heading"></a></h1>
+<section id="general-setup-problems">
+<h2>General Setup Problems<a class="headerlink" href="#general-setup-problems" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>Restarting IntelliJ with invalidated caches <em>(File &gt; Invalidate Caches…)</em> might resolve the current issue.</p></li>
 <li><p>When facing issues with deep dependencies and changes were made to the <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file, executing <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">--force</span></code> might resolve the issue.</p></li>
@@ -134,8 +136,8 @@
 </div></blockquote>
 </li>
 </ul>
-<div class="section" id="database">
-<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline"></a></h3>
+<section id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p>On the first startup, there might be issues with the <code class="docutils literal notranslate"><span class="pre">text_block</span></code> table.
 You can resolve the issue by executing <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">text_block</span> <span class="pre">CONVERT</span> <span class="pre">TO</span> <span class="pre">CHARACTER</span> <span class="pre">SET</span> <span class="pre">utf8mb4</span> <span class="pre">COLLATE</span> <span class="pre">utf8mb4_unicode_ci;</span></code> in your database.</p></li>
@@ -150,19 +152,19 @@ changes can also be applied to the production server. In case you encounter erro
 </div></blockquote>
 </li>
 </ul>
-</div>
-<div class="section" id="client">
-<h3>Client<a class="headerlink" href="#client" title="Permalink to this headline"></a></h3>
+</section>
+<section id="client">
+<h3>Client<a class="headerlink" href="#client" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>If you are using a machine with limited RAM <em>(e.g. ~8 GB RAM)</em> you might have issues starting the Artemis Client. You can resolve this by following
 the description in <a class="reference internal" href="../#usingthecommandline"><span class="std std-ref">Using the command line</span></a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="programming-exercise-setup">
-<h2>Programming Exercise Setup<a class="headerlink" href="#programming-exercise-setup" title="Permalink to this headline"></a></h2>
-<div class="section" id="atlassian-setup-bamboo-bitbucket-and-jira">
-<h3>Atlassian Setup (Bamboo, Bitbucket and Jira)<a class="headerlink" href="#atlassian-setup-bamboo-bitbucket-and-jira" title="Permalink to this headline"></a></h3>
+</section>
+</section>
+<section id="programming-exercise-setup">
+<h2>Programming Exercise Setup<a class="headerlink" href="#programming-exercise-setup" title="Permalink to this heading"></a></h2>
+<section id="atlassian-setup-bamboo-bitbucket-and-jira">
+<h3>Atlassian Setup (Bamboo, Bitbucket and Jira)<a class="headerlink" href="#atlassian-setup-bamboo-bitbucket-and-jira" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p>When setting up the Bamboo, Bitbucket, and Jira, at the same time within the same browser, you might receive the message that the Jira token expired.
 You can resolve the issue by using another browser for configuring Jira, as there seems to be a synchronization problem within the browser.</p></li>
@@ -189,9 +191,9 @@ creating new <a href="https://my.atlassian.com/license/evaluation">trial license
 </details></div></blockquote>
 </li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

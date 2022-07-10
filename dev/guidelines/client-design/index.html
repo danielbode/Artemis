@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Client Theming &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -104,13 +106,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="client-theming">
-<h1>Client Theming<a class="headerlink" href="#client-theming" title="Permalink to this headline"></a></h1>
+  <section id="client-theming">
+<h1>Client Theming<a class="headerlink" href="#client-theming" title="Permalink to this heading"></a></h1>
 <p>Artemis ships with two themes: Light Mode and Dark Mode. It is important to ensure that all UI components look
 consistent and good in both themes. Therefore, please follow the rules and hints below.</p>
 <p>In general, keep in mind: <strong>All UI changes need to be verified in both themes!</strong></p>
-<div class="section" id="color-usage">
-<h2>0. Color Usage<a class="headerlink" href="#color-usage" title="Permalink to this headline"></a></h2>
+<section id="color-usage">
+<h2>0. Color Usage<a class="headerlink" href="#color-usage" title="Permalink to this heading"></a></h2>
 <p>We use different colors for our UI elements in both themes. These colors are passed into Bootstrap, so if you use
 default components such as buttons, cards, forms, etc., they will be automagically themed correctly.</p>
 <p>For your custom components and custom stylesheets, please follow this strict global rule:</p>
@@ -291,17 +293,17 @@ Please justify the use of these options in your PR description.</p>
 </div></blockquote>
 </li>
 </ol>
-</div>
-<div class="section" id="theme-specific-global-styles">
-<h2>1. Theme-specific global styles<a class="headerlink" href="#theme-specific-global-styles" title="Permalink to this headline"></a></h2>
+</section>
+<section id="theme-specific-global-styles">
+<h2>1. Theme-specific global styles<a class="headerlink" href="#theme-specific-global-styles" title="Permalink to this heading"></a></h2>
 <p>It might happen that you need to modify a global style rule in one of the themes, for example if you’re using an external library which styles need to be overridden.</p>
 <div class="line-block">
 <div class="line">Each theme has its own file to which custom global styles can be added: <code class="docutils literal notranslate"><span class="pre">theme-dark.scss</span></code> and <code class="docutils literal notranslate"><span class="pre">theme-default.scss</span></code>.</div>
 <div class="line">For styles that should be applied in both themes, use <code class="docutils literal notranslate"><span class="pre">global.scss</span></code>.</div>
 </div>
-</div>
-<div class="section" id="theme-service">
-<h2>2. Theme Service<a class="headerlink" href="#theme-service" title="Permalink to this headline"></a></h2>
+</section>
+<section id="theme-service">
+<h2>2. Theme Service<a class="headerlink" href="#theme-service" title="Permalink to this heading"></a></h2>
 <p>There will be occasions where you need to know in your components which theme is currently applied.
 The <code class="docutils literal notranslate"><span class="pre">ThemeService</span></code> will provide this information where needed.
 For example, you could add a reactive flag to your component that indicates whether or not the current theme is dark:</p>
@@ -342,8 +344,8 @@ survive a detailed review.</p>
 <div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">themeService</span><span class="p">.</span><span class="nx">applyThemeExplicitly</span><span class="p">(</span><span class="nx">Theme</span><span class="p">.</span><span class="nx">DARK</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cypress Bamboo Plans &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
@@ -93,21 +95,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="cypress-bamboo-plans">
-<h1>Cypress Bamboo Plans<a class="headerlink" href="#cypress-bamboo-plans" title="Permalink to this headline"></a></h1>
+  <section id="cypress-bamboo-plans">
+<h1>Cypress Bamboo Plans<a class="headerlink" href="#cypress-bamboo-plans" title="Permalink to this heading"></a></h1>
 <p><strong>Background</strong></p>
 <p>The Cypress test suite contains system tests verifying the most important features of Artemis. System tests test the whole system and therefore require a complete deployment of Artemis first.
 In order to prevent as many faults (bugs) as possible from being introduced into the develop branch, we want to execute the Cypress test suite whenever new commits are pushed to a Git branch (just like the unit and integration test suites).</p>
 <p>To accomplish this we need to be able to dynamically deploy multiple different instances of Artemis at the same time. An ideal setup would be to deploy the whole Artemis system using Kubernetes. However, this setup is too complex at the moment.
 The main reason for the complexity is that it is very hard to automatically setup Docker containers for the external services (Jira, Bitbucket and Bamboo) and connect them directly with Artemis.</p>
 <p>Therefore, the current setup only dynamically deploys the Artemis server and configures it to connect to the prelive system, which is already properly setup in the university data center.</p>
-<div class="section" id="artemis-deployment-on-bamboo-build-agent">
-<h2>Artemis Deployment on Bamboo Build Agent<a class="headerlink" href="#artemis-deployment-on-bamboo-build-agent" title="Permalink to this headline"></a></h2>
+<section id="artemis-deployment-on-bamboo-build-agent">
+<h2>Artemis Deployment on Bamboo Build Agent<a class="headerlink" href="#artemis-deployment-on-bamboo-build-agent" title="Permalink to this heading"></a></h2>
 <p>Every execution of the Cypress test suite requires its own deployment of Artemis. The easiest way to accomplish this is to deploy Artemis locally on the build agent, which executes the Cypress tests.
 Using docker-compose we can start a MySQL database and the Artemis server locally on the build agent and connect it to the prelive system in the university data center.</p>
-<div class="figure align-center" id="id1">
-<img alt="Artemis Deployment on Bamboo Build Agent for Cypress" src="../../_images/cypress_bamboo_deployment_diagram.svg" /><p class="caption"><span class="caption-text">Artemis Deployment on Bamboo Build Agent for Cypress</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
+<figure class="align-center" id="id1">
+<img alt="Artemis Deployment on Bamboo Build Agent for Cypress" src="../../_images/cypress_bamboo_deployment_diagram.svg" /><figcaption>
+<p><span class="caption-text">Artemis Deployment on Bamboo Build Agent for Cypress</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>In total there are three Docker containers started in the Bamboo build agent:</p>
 <ol class="arabic">
 <li><p>MySQL</p>
@@ -139,24 +143,26 @@ The <em>Artemis Build</em> build plan is triggered whenever a new commit has bee
 <p>The Cypress build plan is only triggered after a successful build of the Artemis executable.
 This does imply a delay (about 10 minutes on average) between the push of new commits and the execution of the Cypress test suite, since the new Artemis executable first has to be built.</p>
 <p><strong>NOTE:</strong> The Cypress test suite is only automatically executed for internal branches and pull requests (requires access to this GitHub repository) <strong>not</strong> for external ones. In case you need access rights, please contact the maintainer <a class="reference external" href="https://github.com/krusche">Stephan Krusche</a>.</p>
-</div>
-<div class="section" id="artemis-deployment-in-test-environment">
-<h2>Artemis Deployment in Test Environment<a class="headerlink" href="#artemis-deployment-in-test-environment" title="Permalink to this headline"></a></h2>
+</section>
+<section id="artemis-deployment-in-test-environment">
+<h2>Artemis Deployment in Test Environment<a class="headerlink" href="#artemis-deployment-in-test-environment" title="Permalink to this heading"></a></h2>
 <p>There is another build plan on Bamboo which executes the Cypress test suite. <a class="reference external" href="https://bamboo.ase.in.tum.de/chain/viewChain.action?planKey=ARTEMIS-AETBB">This build plan</a> deploys the latest Artemis executable of the develop branch on an already configured test environment (test server 3) and executes the Cypress test suite against it.
 This build plan is automatically executed every 8 hours and verifies that test server 3 is working properly.</p>
-<div class="figure align-center" id="id2">
-<img alt="Artemis Deployment on test environment for Cypress" src="../../_images/cypress_test_environment_deployment_diagram.svg" /><p class="caption"><span class="caption-text">Artemis Deployment on test environment for Cypress</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
-</div>
+<figure class="align-center" id="id2">
+<img alt="Artemis Deployment on test environment for Cypress" src="../../_images/cypress_test_environment_deployment_diagram.svg" /><figcaption>
+<p><span class="caption-text">Artemis Deployment on test environment for Cypress</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>The difference of this setup is that the Artemis server is deployed on a separate environment which already contains the necessary configuration files for the Artemis server to connect to the prelive system.
 The Docker image for the Cypress container should be exactly the same as the Cypress image used in the docker-compose file for the deployment on a Bamboo build agent.</p>
-</div>
-<div class="section" id="maintenance">
-<h2>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this headline"></a></h2>
+</section>
+<section id="maintenance">
+<h2>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this heading"></a></h2>
 <p>The Artemis Dockerfile as well as the MySQL image are already maintained because they are used in other Artemis Docker setups. Therefore, only Cypress and the Cypress Docker image require active maintenance.
 Since the Cypress test suite simulates a real user, it makes sense to execute the test suite with the latest Chrome browser. The Cypress Docker image we use always has a specific Chrome version installed.
 Therefore, the <a class="reference external" href="https://github.com/ls1intum/Artemis/blob/develop/src/main/docker/cypress/docker-compose.yml">docker-compose file</a> as well as the <a class="reference external" href="https://bamboo.ase.in.tum.de/build/admin/edit/editBuildDocker.action?buildKey=ARTEMIS-AETBB-QE">build plan configuration for the Cypress tests on test server 3</a> should be updated every month to make sure that the latest Cypress image for the Chrome browser is used.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

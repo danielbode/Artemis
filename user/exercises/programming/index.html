@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Programming Exercise &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -13,6 +14,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -131,8 +133,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="programming-exercise">
-<h1>Programming Exercise<a class="headerlink" href="#programming-exercise" title="Permalink to this headline"></a></h1>
+  <section id="programming-exercise">
+<h1>Programming Exercise<a class="headerlink" href="#programming-exercise" title="Permalink to this heading"></a></h1>
 <div class="contents local topic" id="content-of-this-document">
 <p class="topic-title">Content of this document</p>
 <ul class="simple">
@@ -178,8 +180,8 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="section" id="overview">
-<h2><a class="toc-backref" href="#id3">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<section id="overview">
+<h2><a class="toc-backref" href="#id3">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>Conducting a programming exercise consists of 7 steps distributed among
 instructor, Artemis and students:</p>
 <ol class="arabic simple">
@@ -206,16 +208,18 @@ the exercise (step 4).</p></li>
 students, and react to common errors and problems.</p></li>
 </ol>
 <p>The following activity diagram shows this exercise workflow.</p>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <img alt="Exercise Workflow" src="../../../_images/ExerciseWorkflow.png" />
-<p class="caption"><span class="caption-text">Exercise Workflow</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
-</div>
-<div class="section" id="setup">
-<h2><a class="toc-backref" href="#id4">Setup</a><a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
+<figcaption>
+<p><span class="caption-text">Exercise Workflow</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="setup">
+<h2><a class="toc-backref" href="#id4">Setup</a><a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
 <p>The following sections describe the supported features and the process of creating a new programming exercise.</p>
-<div class="section" id="features">
-<span id="programming-features"></span><h3><a class="toc-backref" href="#id5">Features</a><a class="headerlink" href="#features" title="Permalink to this headline"></a></h3>
+<section id="features">
+<span id="programming-features"></span><h3><a class="toc-backref" href="#id5">Features</a><a class="headerlink" href="#features" title="Permalink to this heading"></a></h3>
 <p>Artemis and its version control and continuous integration infrastructure is independent of the programming language and thus supports
 teaching and learning with any programming language that can be compiled and tested on the command line.
 Instructors have a lot of freedom in defining the environment (e.g. using build agents and Docker images) in which student code is executed and tested.
@@ -426,9 +430,9 @@ The table below provides an overview of the supported features:</p>
 <p>Documentation for FACT framework can be found here: <a class="reference external" href="https://fact.readthedocs.io/en/latest/">https://fact.readthedocs.io/en/latest/</a></p>
 </div>
 <p>We encourage instructors to contribute improvements to the existing <code class="docutils literal notranslate"><span class="pre">templates</span></code> or to provide new templates. Please contact Stephan Krusche and/or create Pull Requests in the GitHub repository.</p>
-</div>
-<div class="section" id="exercise-creation">
-<h3><a class="toc-backref" href="#id6">Exercise Creation</a><a class="headerlink" href="#exercise-creation" title="Permalink to this headline"></a></h3>
+</section>
+<section id="exercise-creation">
+<h3><a class="toc-backref" href="#id6">Exercise Creation</a><a class="headerlink" href="#exercise-creation" title="Permalink to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p><strong>Open Course Management</strong></p></li>
 </ol>
@@ -436,9 +440,9 @@ The table below provides an overview of the supported features:</p>
 <li><p>Open <img alt="course-management" src="../../../_images/course-management.png" /></p></li>
 <li><p>Navigate into <strong>Exercises</strong> of your preferred course</p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/course-management-course-dashboard.png" src="../../../_images/course-management-course-dashboard.png" />
-</div>
+</figure>
 </div></blockquote>
 </li>
 </ul>
@@ -448,16 +452,16 @@ The table below provides an overview of the supported features:</p>
 <ul>
 <li><p>Click on <strong>Generate new programming exercise</strong></p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/course-management-exercise-dashboard.png" src="../../../_images/course-management-exercise-dashboard.png" />
-</div>
+</figure>
 </div></blockquote>
 </li>
 <li><p>Artemis provides various options to customize programming exercises:</p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/programming-options-naming.png" src="../../../_images/programming-options-naming.png" />
-</div>
+</figure>
 <ul class="simple">
 <li><p><strong>Title:</strong> The title of the exercise. It is used to create a project on the VCS server for the exercise.
 Instructors can change the title of the exercise after its creation.</p></li>
@@ -470,9 +474,9 @@ generated repositories and build plans.</p></li>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-options-auxiliary-repositories.png" src="../../../_images/programming-options-auxiliary-repositories.png" />
-</div>
+</figure>
 <ul>
 <li><p><strong>Auxiliary Repositories:</strong> Instructors can add auxiliary repositories with a name, checkout directory and description.
 These repositories are created and added to the build plan when the exercise is created. Auxiliary repositories
@@ -488,9 +492,9 @@ additional resources or overwriting template source code in testing exercises.</
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-options-general-information.png" src="../../../_images/programming-options-general-information.png" />
-</div>
+</figure>
 <ul class="simple">
 <li><p><strong>Categories:</strong> Instructors can freely define up to two categories per exercise. The categories are visible to students
 and should be used consistently to group similar kinds of exercises.</p></li>
@@ -499,9 +503,9 @@ and should be used consistently to group similar kinds of exercises.</p></li>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-options-mode.png" src="../../../_images/programming-options-mode.png" />
-</div>
+</figure>
 <ul class="simple">
 <li><p><strong>Mode:</strong> The mode determines whether students work on the exercise alone or in teams. <strong>Cannot</strong> be changed after the exercise creation.</p></li>
 <li><p><strong>Team size:</strong> If <code class="docutils literal notranslate"><span class="pre">Team</span></code> mode is chosen, instructors can additionally give recommendations for the team size. Instructors/Tutors define the teams after
@@ -510,9 +514,9 @@ the exercise creation.</p></li>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-options-programming-language.png" src="../../../_images/programming-options-programming-language.png" />
-</div>
+</figure>
 <ul class="simple">
 <li><p><strong>Programming Language:</strong> The programming language for the exercise. Artemis chooses the template accordingly.
 Refer to the <a class="reference internal" href="#programming-features"><span class="std std-ref">programming exercise features</span></a> for an overview of the supported features for each template.</p></li>
@@ -524,12 +528,12 @@ how maven dependencies should be used with Artemis exercises. Only available for
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-options-timeline-manual.png" src="../../../_images/programming-options-timeline-manual.png" />
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <img alt="../../../_images/programming-options-timeline-automatic.png" src="../../../_images/programming-options-timeline-automatic.png" />
-</div>
+</figure>
 <ul>
 <li><p><strong>Release Date:</strong> Release date of the exercise. Students will only be able to participate in the exercise after this date.</p></li>
 <li><p><strong>Automatic Tests:</strong> Every commit of a participant triggers the execution of the tests in the <strong>Test</strong> repository.
@@ -554,9 +558,9 @@ This date must be after the due date. The results created by this test run will 
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-options-score.png" src="../../../_images/programming-options-score.png" />
-</div>
+</figure>
 <ul class="simple">
 <li><p><strong>Should this exercise be included in the course / exam score calculation?</strong></p>
 <ul>
@@ -570,9 +574,9 @@ The achieved total points will count towards the total course/exam score</p></li
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/submission-policy-none-form.png" src="../../../_images/submission-policy-none-form.png" />
-</div>
+</figure>
 <ul>
 <li><p><strong>Submission Policy:</strong> Configure an initial submission policy for the exercise.
 The submission policy defines the effect that a submission has on the participation of one participant in a programming exercise.
@@ -590,9 +594,9 @@ Detailed information about the different types of policies and their respective 
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-options-sca.png" src="../../../_images/programming-options-sca.png" />
-</div>
+</figure>
 <ul>
 <li><p><strong>Enable Static Code Analysis:</strong> Enable static code analysis for the exercise.
 The build plans will additionally execute static code analysis tools to find code quality issues in the submissions.
@@ -612,27 +616,27 @@ from the points achieved by passing test cases for code quality issues in the su
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-options-instructions.png" src="../../../_images/programming-options-instructions.png" />
-</div>
+</figure>
 <ul class="simple">
 <li><p><strong>Problem Statement:</strong> The problem statement of the exercise. Refer to <a class="reference internal" href="#interactive-problem-statement"><span class="std std-ref">interactive problem statement</span></a> for more information.</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-options-grading-instructions.png" src="../../../_images/programming-options-grading-instructions.png" />
-</div>
+</figure>
 <ul class="simple">
 <li><p><strong>Grading Instructions:</strong> Available if <strong>Manual Review</strong> is active. Create instructions for the manual assessment of the exercise.</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-options-advanced-configuration.png" src="../../../_images/programming-options-advanced-configuration.png" />
-</div>
+</figure>
 <ul>
 <li><p><strong>Sequential Test Runs:</strong> Activate this option to first run structural and then behavior tests.
 This feature allows students to better concentrate on the immediate challenge at hand.
@@ -658,9 +662,9 @@ configure parts of the build plan themselves.</p></li>
 <li><p>Click on <img alt="generate" src="../../../_images/generate-button.png" /> to create the exercise</p>
 <p>Result: <strong>Programming Exercise</strong></p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/course-dashboard-exercise-programming.png" src="../../../_images/course-dashboard-exercise-programming.png" />
-</div>
+</figure>
 </div></blockquote>
 <p>Artemis creates the repositories:</p>
 <ul class="simple">
@@ -673,15 +677,15 @@ configure parts of the build plan themselves.</p></li>
 <li><p><strong>Template:</strong> also called BASE, basic configuration for the test + template repository, used to create student build plans</p></li>
 <li><p><strong>Solution:</strong> also called SOLUTION, configuration for the test + solution repository, used to manage test cases and to verify the exercise configuration</p></li>
 </ul>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-view-1.png" src="../../../_images/programming-view-1.png" />
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <img alt="../../../_images/programming-view-2.png" src="../../../_images/programming-view-2.png" />
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <img alt="../../../_images/programming-view-3.png" src="../../../_images/programming-view-3.png" />
-</div>
+</figure>
 </li>
 </ul>
 <ol class="arabic simple" start="3">
@@ -798,9 +802,9 @@ ln -s <span class="s2">&quot;</span><span class="nv">$dir</span><span class="s2"
 <li><p>You can change between the different repos and submit the code when needed</p></li>
 </ul>
 <p><strong>Edit in Editor</strong></p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/instructor-editor.png" src="../../../_images/instructor-editor.png" />
-</div>
+</figure>
 </li>
 <li><p><strong>Alternative 3:</strong> Use IntelliJ with the Orion plugin and change the code directly in IntelliJ</p></li>
 <li><p>Check the results of the template and the solution build plan</p></li>
@@ -890,9 +894,9 @@ PMD and PMD CPD are a special case as both tools share a common plugin. To disab
 <li><p>Adapt the interactive problem statement</p></li>
 </ol>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/course-dashboard-programming-edit.png" src="../../../_images/course-dashboard-programming-edit.png" />
-</div>
+</figure>
 </div></blockquote>
 <ul class="simple">
 <li><p>Click the <img alt="edit" src="../../../_images/edit1.png" /> button of the programming exercise or navigate into <img alt="edit-in-editor" src="../../../_images/edit-in-editor.png" /> and adapt the interactive problem statement.</p></li>
@@ -910,18 +914,18 @@ PMD and PMD CPD are a special case as both tools share a common plugin. To disab
 <li><p><img alt="grading-trigger-all" src="../../../_images/configure-grading-trigger-all.png" /> Trigger all build plans. This leads to the creation of new results using the updated grading configuration</p></li>
 <li><p>Two badges display if the current configuration has been saved yet and if the grading was changed. The following graphic visualizes how each action affects the grading page state:</p></li>
 </ul>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/configure-grading-update-information.png" src="../../../_images/configure-grading-update-information.png" />
-</div>
+</figure>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Artemis always grades new submissions with the latest configuration but existing submissions might have been graded with an outdated configuration. Artemis warns instructors about grading inconsistencies with the <strong>Updated grading</strong> badge.</p>
 </div>
 </li>
 <li><p><strong>Test Case Tab</strong>: Adapt the contribution of each test case to the overall score</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/configure-grading-test-cases.png" src="../../../_images/configure-grading-test-cases.png" />
-</div>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Artemis registers the test cases defined in the <strong>Test</strong> repository using the results generated by <strong>Solution</strong> build plan. The test cases are only shown after the first execution of the <strong>Solution</strong> build plan.</p>
@@ -983,9 +987,9 @@ Additionally, results of this test case are <em>not</em> considered in the stude
 </ul>
 </li>
 <li><p><strong>Code Analysis Tab</strong>: Configure the visibility and grading of code quality issues on a category-level</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/configure-grading-code-analysis.png" src="../../../_images/configure-grading-code-analysis.png" />
-</div>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The Code Analysis Tab is only available if static code analysis was activated for the exercise.</p>
@@ -1178,9 +1182,9 @@ white spaces)</p></td>
 <ul>
 <li><p>Open the <img alt="view" src="../../../_images/view1.png" /> page of the programming exercise</p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/solution-template-result.png" src="../../../_images/solution-template-result.png" />
-</div>
+</figure>
 </div></blockquote>
 </li>
 <li><p>The template result should have a score of <strong>0%</strong> with <strong>0 of X passed</strong> or <strong>0 of X passed, 0 issues</strong> (if static code analysis is enabled)</p></li>
@@ -1195,14 +1199,14 @@ white spaces)</p></td>
 <ul class="simple">
 <li><p>Below the problem statement, you should see <strong>Test cases</strong> ok and <strong>Hints</strong> ok</p></li>
 </ul>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/programming-edit-status.png" src="../../../_images/programming-edit-status.png" />
-</div>
+</figure>
 </li>
 </ul>
-</div>
-<div class="section" id="exercise-import">
-<h3><a class="toc-backref" href="#id7">Exercise Import</a><a class="headerlink" href="#exercise-import" title="Permalink to this headline"></a></h3>
+</section>
+<section id="exercise-import">
+<h3><a class="toc-backref" href="#id7">Exercise Import</a><a class="headerlink" href="#exercise-import" title="Permalink to this heading"></a></h3>
 <p>On exercise import, Artemis copies the repositories, build plans, interactive problem statement and grading configuration from the imported exercise.</p>
 <ol class="arabic simple">
 <li><p><strong>Open Course Management</strong></p></li>
@@ -1211,9 +1215,9 @@ white spaces)</p></td>
 <li><p>Open <img alt="course-management" src="../../../_images/course-management.png" /></p></li>
 <li><p>Navigate into <strong>Exercises</strong> of your preferred course</p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/course-management-course-dashboard.png" src="../../../_images/course-management-course-dashboard.png" />
-</div>
+</figure>
 </div></blockquote>
 </li>
 </ul>
@@ -1223,16 +1227,16 @@ white spaces)</p></td>
 <ul>
 <li><p>Click on <strong>Import Programming Exercise</strong></p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/course-management-exercise-dashboard-import.png" src="../../../_images/course-management-exercise-dashboard-import.png" />
-</div>
+</figure>
 </div></blockquote>
 </li>
 <li><p>Select an exercise to import</p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/course-management-exercise-dashboard-import-modal.png" src="../../../_images/course-management-exercise-dashboard-import-modal.png" />
-</div>
+</figure>
 </div></blockquote>
 </li>
 </ul>
@@ -1243,9 +1247,9 @@ white spaces)</p></td>
 <ul>
 <li><p>Artemis provides special options to update the assessment process</p>
 <blockquote>
-<div><div class="figure align-center">
+<div><figure class="align-center">
 <img alt="../../../_images/programming-import-options.png" src="../../../_images/programming-import-options.png" />
-</div>
+</figure>
 <ul class="simple">
 <li><p><strong>Recreate Build Plans</strong>: Create new build plans instead of copying them from the imported exercise</p></li>
 <li><p><strong>Update Template</strong>: Update the template files in the repositories. This can be useful if the imported exercise is old and contains outdated dependencies.
@@ -1266,13 +1270,13 @@ For Java, Artemis replaces JUnit4 by Ares (which includes JUnit5) and updates th
 <p class="admonition-title">Note</p>
 <p>The interactive problem statement can be edited after finishing the import. Some options such as <strong>Sequential Test Runs</strong> cannot be changed on exercise import.</p>
 </div>
-</div>
-</div>
-<div class="section" id="static-code-analysis-default-configuration">
-<h2><a class="toc-backref" href="#id8">Static Code Analysis Default Configuration</a><a class="headerlink" href="#static-code-analysis-default-configuration" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="static-code-analysis-default-configuration">
+<h2><a class="toc-backref" href="#id8">Static Code Analysis Default Configuration</a><a class="headerlink" href="#static-code-analysis-default-configuration" title="Permalink to this heading"></a></h2>
 <p>The following sections list the rules that are active for the default static code analysis configuration.</p>
-<div class="section" id="java">
-<h3><a class="toc-backref" href="#id9">Java</a><a class="headerlink" href="#java" title="Permalink to this headline"></a></h3>
+<section id="java">
+<h3><a class="toc-backref" href="#id9">Java</a><a class="headerlink" href="#java" title="Permalink to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p><strong>Spotbugs</strong></p></li>
 </ol>
@@ -1619,9 +1623,9 @@ For a description of the various PMD CPD configuration parameters refer to the <
 <span class="nt">&lt;ignoreIdentifiers&gt;</span>false<span class="nt">&lt;/ignoreIdentifiers&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="c">
-<span id="c-sca-default-config"></span><h3><a class="toc-backref" href="#id10">C</a><a class="headerlink" href="#c" title="Permalink to this headline"></a></h3>
+</section>
+<section id="c">
+<span id="c-sca-default-config"></span><h3><a class="toc-backref" href="#id10">C</a><a class="headerlink" href="#c" title="Permalink to this heading"></a></h3>
 <p><strong>GCC</strong></p>
 <p>For a description of the rules/warnings refer to the <a class="reference external" href="https://gcc.gnu.org/onlinedocs/gcc-11.1.0/gcc/Static-Analyzer-Options.html">GCC Documentation</a>.
 For readability reasons the rule/warning prefix <code class="docutils literal notranslate"><span class="pre">-Wanalyzer-</span></code> is omitted.</p>
@@ -1693,10 +1697,10 @@ Usually it’s best to disable this category, as it contains errors not related 
 Therefore, if the warning/error does not belong to first four above categories it is not an SCA issue as of <code class="docutils literal notranslate"><span class="pre">GCC</span> <span class="pre">11.1.0</span></code>.</p>
 </div>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="submission-policy-configuration">
-<h2><a class="toc-backref" href="#id11">Submission Policy Configuration</a><a class="headerlink" href="#submission-policy-configuration" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="submission-policy-configuration">
+<h2><a class="toc-backref" href="#id11">Submission Policy Configuration</a><a class="headerlink" href="#submission-policy-configuration" title="Permalink to this heading"></a></h2>
 <p>The following sections explains the configuration options for submission policies:</p>
 <p id="configure-submission-policies">The submission policy defines the effect that a submission has on the participation of one participant in a programming exercise.
 A programming exercise might have no submission policy at all, or one submission policy, but never more than one. Submission policies are initially specified
@@ -1706,22 +1710,22 @@ in the creation process of a programming exercise and can later be adjusted in t
 <p>One submission is defined by one push to the exercise participation repository by the participant themself that triggers the
 automatic tests resulting in feedback for the participant. Automatic test runs triggered by instructors are not considered submissions.</p>
 </div>
-<div class="section" id="submission-policy-configuration-general-information">
-<h3><a class="toc-backref" href="#id12">Submission Policy Configuration &amp; General Information</a><a class="headerlink" href="#submission-policy-configuration-general-information" title="Permalink to this headline"></a></h3>
+<section id="submission-policy-configuration-general-information">
+<h3><a class="toc-backref" href="#id12">Submission Policy Configuration &amp; General Information</a><a class="headerlink" href="#submission-policy-configuration-general-information" title="Permalink to this heading"></a></h3>
 <p>Choosing the right submission policy configuration depends on the exercise and your teaching style.
 In general, lock repository and submission penalty policies combat trial-and-error solving approaches.</p>
 <p><strong>1. None</strong>
 When selecting no submission policy, exercise participants can submit their solution as often as they want until the deadline.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/submission-policy-none-form.png" src="../../../_images/submission-policy-none-form.png" />
-</div>
+</figure>
 <p><strong>2. Lock Repository</strong>
 Participants can submit a fixed number of times within the submission period of a programming exercise. Once the participant reaches the submission limit,
 further participation in the exercise is prevented by locking the participation repository. The participant may still work on their solution locally, but
 cannot submit it to Artemis to receive feedback.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/submission-policy-lock-repository-form.png" src="../../../_images/submission-policy-lock-repository-form.png" />
-</div>
+</figure>
 <p>With the example configuration shown in the figure above, participants can submit their solution 5 times and receive feedback 5 times.
 After that, Artemis locks the participation repository, so the participant can no longer push their solutions to their repository.</p>
 <div class="admonition note">
@@ -1733,28 +1737,28 @@ Artemis attempts to lock the repository again and sets the newly generated resul
 Participants can submit as often as they want until the deadline, however, for each submission exceeding the submission limit,
 the <em>exceeding submission limit penalty</em> is deducted from the participant’s score. The exceeding submission limit penalty must be
 provided as a positive number of points.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/submission-policy-submission-penalty-form.png" src="../../../_images/submission-policy-submission-penalty-form.png" />
-</div>
+</figure>
 <p>With the example configuration shown in the figure above, participants can submit their solution 3 times regularly. For every
 submission exceeding the limit of 3, 1.5 points are deducted from the participant’s score. The score cannot be negative.
 For example, when the participant reaches 6 out of 12 points on the 4th submission, 1.5 points are deducted for the one submission exceeding
 the limit of 3, resulting in a participation score of 4.5 instead of 6 out of 12. On the 5th submission, 3 points are deducted
 for 2 submissions exceeding the limit. The student receives feedback that explains the deduction.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/submission-penalty-feedback-element.png" src="../../../_images/submission-penalty-feedback-element.png" />
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <img alt="../../../_images/submission-penalty-feedback-element-2.png" src="../../../_images/submission-penalty-feedback-element-2.png" />
-</div>
-</div>
-<div class="section" id="updating-submission-policies">
-<h3><a class="toc-backref" href="#id13">Updating Submission Policies</a><a class="headerlink" href="#updating-submission-policies" title="Permalink to this headline"></a></h3>
+</figure>
+</section>
+<section id="updating-submission-policies">
+<h3><a class="toc-backref" href="#id13">Updating Submission Policies</a><a class="headerlink" href="#updating-submission-policies" title="Permalink to this heading"></a></h3>
 <p>After generating a programming exercise initially, submission policies can be updated and toggled on the grading page
 of the programming exercise.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../../_images/submission-policy-grading-page.png" src="../../../_images/submission-policy-grading-page.png" />
-</div>
+</figure>
 <p><strong>1. (De)activating Submission Policies</strong>
 When the submission policy of a programming exercise is active, the <img alt="deactivate" src="../../../_images/submission-policy-deactivate-button.png" /> button is displayed.
 When the policy is inactive, the <img alt="activate" src="../../../_images/submission-policy-activate-button.png" /> button is displayed instead. The active submission policy of an exercise can
@@ -1770,10 +1774,10 @@ Submission policies can be deleted by selecting <em>None</em> as submission poli
 their effect on participations is removed. Every repository that is locked due to a lock repository policy is unlocked and the
 participant can continue working on the exercise. When deleting a submission penalty policy, <img alt="re-evaluate" src="../../../_images/configure-grading-reevaluate-all.png" /> must be pressed in order
 to revert the submission policy effect.</p>
-</div>
-</div>
-<div class="section" id="online-editor">
-<h2><a class="toc-backref" href="#id14">Online Editor</a><a class="headerlink" href="#online-editor" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="online-editor">
+<h2><a class="toc-backref" href="#id14">Online Editor</a><a class="headerlink" href="#online-editor" title="Permalink to this heading"></a></h2>
 <p>The following screenshot shows the online code editor with interactive
 and dynamic exercise instructions on the right side. Tasks and UML
 diagram elements are referenced by test cases and update their color
@@ -1781,19 +1785,21 @@ from red to green after students submit a new version and all test cases
 associated with a task or diagram element pass. This allows the students
 to immediately recognize which tasks are already fulfilled and is
 particularly helpful for programming beginners.</p>
-<div class="figure align-center" id="id2">
+<figure class="align-center" id="id2">
 <img alt="Online Editor" src="../../../_images/CodeEditor.png" />
-<p class="caption"><span class="caption-text">Online Editor</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
-</div>
-<div class="section" id="display-of-hidden-files">
-<h3><a class="toc-backref" href="#id15">Display of hidden files</a><a class="headerlink" href="#display-of-hidden-files" title="Permalink to this headline"></a></h3>
+<figcaption>
+<p><span class="caption-text">Online Editor</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="display-of-hidden-files">
+<h3><a class="toc-backref" href="#id15">Display of hidden files</a><a class="headerlink" href="#display-of-hidden-files" title="Permalink to this heading"></a></h3>
 <p>The online editor displays only visible files, to avoid showing for example <code class="docutils literal notranslate"><span class="pre">.git</span></code> and <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> config files.
 This also means that other config files, like SwiftLint’s <code class="docutils literal notranslate"><span class="pre">.swiftlint.yml</span></code> file, are not shown. Those files currently
 can only be accessed via your own IDE.</p>
-</div>
-</div>
-<div class="section" id="testing-with-ares">
-<h2><a class="toc-backref" href="#id16">Testing with Ares</a><a class="headerlink" href="#testing-with-ares" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="testing-with-ares">
+<h2><a class="toc-backref" href="#id16">Testing with Ares</a><a class="headerlink" href="#testing-with-ares" title="Permalink to this heading"></a></h2>
 <p>Ares is a JUnit 5 extension for easy and secure Java testing on Artemis.</p>
 <p>Its main features are</p>
 <ul class="simple">
@@ -1805,14 +1811,14 @@ or pointing to a possible location that caused an Exception</p></li>
 <li><p>utilities to test exercises using System.out and System.in comfortably</p></li>
 </ul>
 <p><strong>For more information see</strong> <a class="reference external" href="https://github.com/ls1intum/Ares">Ares GitHub</a></p>
-</div>
-<div class="section" id="best-practices-for-writing-test-cases">
-<h2><a class="toc-backref" href="#id17">Best practices for writing test cases</a><a class="headerlink" href="#best-practices-for-writing-test-cases" title="Permalink to this headline"></a></h2>
+</section>
+<section id="best-practices-for-writing-test-cases">
+<h2><a class="toc-backref" href="#id17">Best practices for writing test cases</a><a class="headerlink" href="#best-practices-for-writing-test-cases" title="Permalink to this heading"></a></h2>
 <p>The following sections describe best practices for writing test cases.
 The examples and explanations are specifically written for Java (using Ares/JUnit5), but the practices can also be generalized
 for other programming languages.</p>
-<div class="section" id="general-best-practices">
-<h3><a class="toc-backref" href="#id18">General best practices</a><a class="headerlink" href="#general-best-practices" title="Permalink to this headline"></a></h3>
+<section id="general-best-practices">
+<h3><a class="toc-backref" href="#id18">General best practices</a><a class="headerlink" href="#general-best-practices" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p><strong>Write Meaningful Comments for your Tests</strong></p>
 <p>These comments should contain information about what is tested specifically, which task from the problem statement
@@ -2003,9 +2009,9 @@ and this is not handled appropriately in the test, this might produce a <code cl
 cryptic fail message. A null check in the test case allows providing a more clear fail message to the student.</p>
 </li>
 </ul>
-</div>
-<div class="section" id="java-best-practices">
-<h3><a class="toc-backref" href="#id19">Java best practices</a><a class="headerlink" href="#java-best-practices" title="Permalink to this headline"></a></h3>
+</section>
+<section id="java-best-practices">
+<h3><a class="toc-backref" href="#id19">Java best practices</a><a class="headerlink" href="#java-best-practices" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p><strong>Use Constant String Attributes to Represent the Base Package</strong></p>
 <p>Some courses use long package identifiers like <code class="docutils literal notranslate"><span class="pre">de.tum.in.ase.pse</span></code>. When instantiating objects with reflections,
@@ -2174,14 +2180,14 @@ impossible to change the value during runtime.</p></li>
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="sending-feedback-back-to-artemis">
-<h2><a class="toc-backref" href="#id20">Sending Feedback back to Artemis</a><a class="headerlink" href="#sending-feedback-back-to-artemis" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="sending-feedback-back-to-artemis">
+<h2><a class="toc-backref" href="#id20">Sending Feedback back to Artemis</a><a class="headerlink" href="#sending-feedback-back-to-artemis" title="Permalink to this heading"></a></h2>
 <p>Per default the results of all unit tests are extracted and sent back to Artemis without any further manual interaction needed.
 Only for some custom setups a semi-automatic approach might be necessary.</p>
-<div class="section" id="jenkins">
-<h3><a class="toc-backref" href="#id21">Jenkins</a><a class="headerlink" href="#jenkins" title="Permalink to this headline"></a></h3>
+<section id="jenkins">
+<h3><a class="toc-backref" href="#id21">Jenkins</a><a class="headerlink" href="#jenkins" title="Permalink to this heading"></a></h3>
 <p>In the Jenkins CI-System the test case feedbacks are extracted from XML-Files in the JUnit format.
 The Jenkins plugins reads all such files from a folder <code class="docutils literal notranslate"><span class="pre">results</span></code> in the top level of the Jenkins workspace.
 The files resulting from the execution of regular executed unit tests are copied to this folder automatically.</p>
@@ -2198,9 +2204,9 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">false</
 <li><p><code class="docutils literal notranslate"><span class="pre">message</span></code>: The message shown as additional information to the student.
 <strong>Required for non-successful tests/feedback</strong>, optional otherwise.</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

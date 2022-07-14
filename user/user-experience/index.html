@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Known Issues &mdash; Artemis  documentation</title>
+  <title>User Experience &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,7 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="prev" title="Troubleshooting" href="../troubleshooting/" /> 
+    <link rel="next" title="Guided Tours" href="guided_tours/" />
+    <link rel="prev" title="Communication" href="../communication/" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,12 +39,16 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../user/exercises/">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/exam_mode/">Exam Mode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/orion/">Orion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/communication/">Communication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/user-experience/">User Experience</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../exercises/">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exam_mode/">Exam Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orion/">Orion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../communication/">Communication</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Experience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guided_tours/">Guided Tours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes/">User Interface Themes</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul>
@@ -59,15 +64,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../dev/open-source/">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../registration/">User Registration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../accessRights/">Access Rights</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Known Issues</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#no-user-updates-with-jenkins-without-password">No user updates with Jenkins without password</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/registration/">User Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/saml2-shibboleth/">Shibboleth/SAML2 Login &amp; Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/accessRights/">Access Rights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/troubleshooting/">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/knownIssues/">Known Issues</a></li>
 </ul>
 
         </div>
@@ -84,9 +86,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
-      <li>Known Issues</li>
+      <li>User Experience</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/admin/knownIssues.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/user-experience.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -94,31 +96,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="known-issues">
-<h1>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this heading"></a></h1>
-<section id="no-user-updates-with-jenkins-without-password">
-<h2>No user updates with Jenkins without password<a class="headerlink" href="#no-user-updates-with-jenkins-without-password" title="Permalink to this heading"></a></h2>
-<p>Currently, Jenkins doesn’t allow to update the user details. We would have to delete and create the user with the new information.
-We can only do this if we have the password, which we don’t have unless the admin provides a new password as the passwords are hashed in our database.
-If you update the user details in Artemis you have the following options if you use Jenkins:</p>
-<ol class="loweralpha simple">
-<li><p>Update the user manually in Jenkins. As admins rarely update the users themselves, this wouldn’t be too much work.</p></li>
-<li><p>Leave it as it is. You have to decide for yourself whether the user details in Jenkins are important.</p></li>
-<li><p>Provide a password. <strong>Not recommended!</strong> You would need to provide the user with the new password which is itself a security issue and then the user has to change the password which might not be done reliably.</p></li>
-</ol>
-<p>Important to know:</p>
-<ul class="simple">
-<li><p>Group/Permission updates get always delegated. They are separate from user details.</p></li>
-<li><p>If users change their password after a not delegated user change, the user change gets automatically applied when recreating the Jenkins user.</p></li>
+  <section id="user-experience">
+<span id="id1"></span><h1>User Experience<a class="headerlink" href="#user-experience" title="Permalink to this heading"></a></h1>
+<p>Artemis has been developed with high learnability and user experience in mind:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guided_tours/">Guided Tours</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guided_tours/#control-guided-tours">Control Guided Tours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guided_tours/#restart-or-resume-guided-tours">Restart or Resume Guided Tours</a></li>
 </ul>
-</section>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="themes/">User Interface Themes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="themes/#changing-the-theme">Changing the theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes/#synchronize-the-theme-with-your-operating-system">Synchronize the theme with your operating system</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../troubleshooting/" class="btn btn-neutral float-left" title="Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../communication/" class="btn btn-neutral float-left" title="Communication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="guided_tours/" class="btn btn-neutral float-right" title="Guided Tours" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

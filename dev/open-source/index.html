@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Database Migration &mdash; Artemis  documentation</title>
+  <title>Open-Source &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="next" title="Structural Migration with Liquibase" href="structure/" />
-    <link rel="prev" title="System Design" href="../system-design/" /> 
+    <link rel="next" title="User Registration" href="../../admin/registration/" />
+    <link rel="prev" title="Cypress Bamboo Plans" href="../cypress/" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,17 +50,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../setup/">Setup Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guidelines/">Coding and design guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../system-design/">System Design</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Database Migration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="structure/">Structural Migration with Liquibase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data/">Data Migration with Java</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/">Database Migration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../use-local-user-management/">Using local user management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guided-tour/">Guided Tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../testservers/">Test Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/">Builds and Dependency Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cypress/">Cypress Bamboo Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../open-source/">Open-Source</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Open-Source</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Administration Guide</span></p>
 <ul>
@@ -85,9 +81,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
-      <li>Database Migration</li>
+      <li>Open-Source</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/dev/migration.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/dev/open-source.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -95,32 +91,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="database-migration">
-<h1>Database Migration<a class="headerlink" href="#database-migration" title="Permalink to this heading"></a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Database Migration</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="structure/">Structural Migration with Liquibase</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="structure/#gradle">1. Gradle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure/#changelog">2. Changelog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure/#development">3. Development</a></li>
+  <section id="open-source">
+<h1>Open-Source<a class="headerlink" href="#open-source" title="Permalink to this heading"></a></h1>
+<p>We are dedicated to provide great software support for excellent teaching. To achieve that, we develop Artemis as <a class="reference external" href="https://www.youtube.com/watch?v=EMi3PCW23yQ">free and open-source</a> software. The core ideas of free software always have been “use”, “study”, “share”, and “improve”.</p>
+<p>With Artemis, we embrace all of those aspects:</p>
+<ul class="simple">
+<li><p>Artemis is <strong>used</strong> by over ten universities and thousands of students.</p></li>
+<li><p>Artemis is part of active research and is constantly improved by students as part of university courses or masters/bachelors theses. <strong>Studying</strong> the Artemis source code helps our students to improve their software engineering skills while working on a real, actively used product.</p></li>
+<li><p>The foundation of learning and teaching is <strong>sharing</strong> knowledge. Artemis is used to conduct courses at universities and, at the same time, used as an education research platform.</p></li>
+<li><p>With more than <a class="reference external" href="https://github.com/ls1intum/Artemis/graphs/contributors">140 contributors</a> and a <a class="reference external" href="https://github.com/ls1intum/Artemis/releases">regular release cycle</a>, we are constantly <strong>improving</strong> Artemis.</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="data/">Data Migration with Java</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="data/#changelog">1. Changelog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data/#development">2. Development</a></li>
-</ul>
-</li>
-</ul>
-</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../system-design/" class="btn btn-neutral float-left" title="System Design" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="structure/" class="btn btn-neutral float-right" title="Structural Migration with Liquibase" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../cypress/" class="btn btn-neutral float-left" title="Cypress Bamboo Plans" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../admin/registration/" class="btn btn-neutral float-right" title="User Registration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

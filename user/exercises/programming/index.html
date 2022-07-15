@@ -286,121 +286,6 @@ Instructors can still use those templates to generate programming exercises and 
 <li><p>Not all <code class="docutils literal notranslate"><span class="pre">templates</span></code> support the same feature set.
 Depending on the feature set, some options might not be available during the creation of the programming exercise.
 The table below provides an overview of the supported features:</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 10%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 16%" />
-<col style="width: 24%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Programming Language</p></th>
-<th class="head"><p>Sequential Test Runs</p></th>
-<th class="head"><p>Static Code Analysis</p></th>
-<th class="head"><p>Plagiarism Check</p></th>
-<th class="head"><p>Package Name</p></th>
-<th class="head"><p>Project Type</p></th>
-<th class="head"><p>Solution Repository Checkout</p></th>
-<th class="head"><p>Testwise Coverage Analysis</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Java</p></td>
-<td><p>yes</p></td>
-<td><p>yes</p></td>
-<td><p>yes</p></td>
-<td><p>yes</p></td>
-<td><p>yes</p></td>
-<td><p>no</p></td>
-<td><p>yes (only for Gradle on Atlassian Setup)</p></td>
-</tr>
-<tr class="row-odd"><td><p>Python</p></td>
-<td><p>yes</p></td>
-<td><p>no</p></td>
-<td><p>yes</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-</tr>
-<tr class="row-even"><td><p>C</p></td>
-<td><p>no</p></td>
-<td><p>yes</p></td>
-<td><p>yes</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-</tr>
-<tr class="row-odd"><td><p>C (FACT framework)</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-</tr>
-<tr class="row-even"><td><p>Haskell</p></td>
-<td><p>yes</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>yes</p></td>
-<td><p>no</p></td>
-</tr>
-<tr class="row-odd"><td><p>Kotlin</p></td>
-<td><p>yes</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>yes</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-</tr>
-<tr class="row-even"><td><p>VHDL</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-</tr>
-<tr class="row-odd"><td><p>Assembler</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-</tr>
-<tr class="row-even"><td><p>Swift</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-</tr>
-<tr class="row-odd"><td><p>OCaml</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>no</p></td>
-<td><p>yes</p></td>
-<td><p>no</p></td>
-</tr>
-</tbody>
-</table>
 <ul class="simple">
 <li><p><em>Sequential Test Runs</em>: <code class="docutils literal notranslate"><span class="pre">Artemis</span></code> can generate a build plan which first executes structural and then behavioral tests. This feature can help students to better concentrate on the immediate challenge at hand.</p></li>
 <li><p><em>Static Code Analysis</em>: <code class="docutils literal notranslate"><span class="pre">Artemis</span></code> can generate a build plan which additionally executes static code analysis tools.
@@ -650,7 +535,7 @@ This option is useful to compare the student’s submission with the sample solu
 <li><p><strong>Allow Offline IDE:</strong> Allow students to clone their personal repository and work on the exercise with their preferred IDE.</p></li>
 <li><p><strong>Allow Online Editor:</strong> Allow students to work on the exercise using the Artemis Online Code Editor.</p></li>
 <li><p><strong>Record Testwise Coverage:</strong> Activate this option to record the testwise coverage for the solution repository.
-This option is only available for Java-Gradle-projects with non-sequential test runs.</p>
+This option is only available for Java/Kotlin-exercises with non-sequential test runs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>At least one of the options <strong>Allow Offline IDE:</strong> and <strong>Allow Online Editor:</strong> must be active</p>

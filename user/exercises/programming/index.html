@@ -2176,8 +2176,6 @@ still compile student code with the latest Java version and only the test code w
 <li><p>The Reflection API is limited when it comes to constant attributes. Constant attributes are static final attributes
 with a primitive or <code class="docutils literal notranslate"><span class="pre">String</span></code> type. Java inlines such attributes during compile-time, which makes it more or less
 impossible to change the value during runtime.</p></li>
-<li><p>Interface methods are always <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">abstract</span></code>, so you shouldn’t explicitly declare them as either <code class="docutils literal notranslate"><span class="pre">public</span></code> or
-<code class="docutils literal notranslate"><span class="pre">abstract</span></code>. This is especially important when creating/writing structural tests.</p></li>
 <li><p>Be careful with long output, arrays or <code class="docutils literal notranslate"><span class="pre">Strings</span></code>. This might be unreadable in Artemis or even cut of after 5000 characters.</p></li>
 </ul>
 </li>

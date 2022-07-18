@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>File Upload Exercise &mdash; Artemis  documentation</title>
+  <title>Team exercises &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/style.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
-    <link rel="next" title="Team exercises" href="../team-exercises/" />
-    <link rel="prev" title="Textual exercise" href="../textual/" /> 
+    <link rel="next" title="Lectures" href="../../lectures/" />
+    <link rel="prev" title="File Upload Exercise" href="../file-upload/" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,14 +46,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../quiz/">Quiz exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../modeling/">Modeling exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../textual/">Textual exercise</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">File Upload Exercise</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../file-upload/">File Upload Exercise</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Team exercises</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#student-submission">Student Submission</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#assessment">Assessment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collaboration">Collaboration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#team-overview">Team overview</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../team-exercises/">Team exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/">Lectures</a></li>
@@ -100,9 +100,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../">Exercises</a> &raquo;</li>
-      <li>File Upload Exercise</li>
+      <li>Team exercises</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/exercises/file-upload.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/exercises/team-exercises.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -110,89 +110,85 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="file-upload-exercise">
-<h1>File Upload Exercise<a class="headerlink" href="#file-upload-exercise" title="Permalink to this heading"></a></h1>
+  <section id="team-exercises">
+<h1>Team exercises<a class="headerlink" href="#team-exercises" title="Permalink to this heading"></a></h1>
 <div class="contents local topic" id="content-of-this-document">
 <p class="topic-title">Content of this document</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
-<li><p><a class="reference internal" href="#setup" id="id2">Setup</a></p></li>
-<li><p><a class="reference internal" href="#student-submission" id="id3">Student Submission</a></p></li>
-<li><p><a class="reference internal" href="#assessment" id="id4">Assessment</a></p></li>
+<li><p><a class="reference internal" href="#overview" id="id7">Overview</a></p></li>
+<li><p><a class="reference internal" href="#setup" id="id8">Setup</a></p></li>
+<li><p><a class="reference internal" href="#collaboration" id="id9">Collaboration</a></p></li>
+<li><p><a class="reference internal" href="#team-overview" id="id10">Team overview</a></p></li>
 </ul>
 </div>
 <section id="overview">
-<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
-<p>Conducting a file upload exercise consists of 3 steps:</p>
-<ol class="arabic simple">
-<li><p><strong>Instructor prepares exercise:</strong> Creates and configures the exercise in Artemis.</p></li>
-<li><p><strong>Student solves exercise:</strong> Creates a submission file, and uploads it.</p></li>
-<li><p><strong>Instructor assesses submissions:</strong> Review the handed in files and create manual results for the students.</p></li>
-</ol>
+<h2><a class="toc-backref" href="#id7">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>Team exercises are supported for:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../programming/"><span class="doc">Programming exercises</span></a></p></li>
+<li><p><a class="reference internal" href="../modeling/"><span class="doc">Modeling exercises</span></a></p></li>
+<li><p><a class="reference internal" href="../textual/"><span class="doc">Textual exercises</span></a></p></li>
+<li><p><a class="reference internal" href="../file-upload/"><span class="doc">File upload exercises</span></a></p></li>
+</ul>
 </section>
 <section id="setup">
-<h2><a class="toc-backref" href="#id2">Setup</a><a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
-<p>The following sections describe the supported features and the process of creating a new file upload exercise.</p>
-<ul>
-<li><p>Open <img alt="course-management" src="../../../_images/course-management.png" /></p></li>
-<li><p>Navigate into <strong>Exercises</strong> of your preferred course</p>
-<blockquote>
-<div><figure class="align-center">
-<img alt="../../../_images/course-management-course-dashboard.png" src="../../../_images/course-management-course-dashboard.png" />
+<h2><a class="toc-backref" href="#id8">Setup</a><a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
+<p>When creating an exercise, the instructor first needs to select the mode <strong>Team</strong>. This is only available during the creation of the exercise, as it <strong>can not be changed later on</strong>.
+The team size can also be configured, but it is just a recommendation that can be overridden when creating the actual teams.</p>
+<figure class="align-center" id="id1">
+<img alt="Set Team Mode" src="../../../_images/set_team_mode.png" />
+<figcaption>
+<p><span class="caption-text">Set Team Mode</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
 </figure>
-</div></blockquote>
-</li>
-<li><p>Click on <strong>Create new file upload exercise</strong></p>
-<blockquote>
-<div><figure class="align-center">
-<img alt="../../../_images/create-new-file-upload-exercise.png" src="../../../_images/create-new-file-upload-exercise.png" />
+<p>Instructors can click on the <img alt="teams_button" src="../../../_images/teams_button.png" /> button in the course exercises page to navigate to the team management page.</p>
+<figure class="align-center" id="id2">
+<img alt="Manage teams" src="../../../_images/manage_teams.png" />
+<figcaption>
+<p><span class="caption-text">Manage teams</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
 </figure>
-</div></blockquote>
-</li>
-<li><p>Fill out all mandatory values and click on <img alt="save" src="../../../_images/save_button.png" /></p></li>
-<li><p>The exercise specific <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">Pattern</span></code> defines which file types students can upload as solution.</p>
-<blockquote>
-<div><figure class="align-center">
-<img alt="../../../_images/file_upload_exercise_creation.png" src="../../../_images/file_upload_exercise_creation.png" />
+<p>Clicking <img alt="create_team_button" src="../../../_images/create_team_button.png" /> opens the dialog shown below. To manually create a team instructors must define the name, short name and students for the team. Optionally, a
+tutor can also be assigned to the team.</p>
+<figure class="align-center" id="id3">
+<img alt="Create team dialog" src="../../../_images/create_team_dialog.png" />
+<figcaption>
+<p><span class="caption-text">Create team dialog</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
 </figure>
-</div></blockquote>
-<p>Result: <strong>File Upload Exercise</strong></p>
-<blockquote>
-<div><figure class="align-center">
-<img alt="../../../_images/course-dashboard-exercise-file-upload.png" src="../../../_images/course-dashboard-exercise-file-upload.png" />
+<p>Instructors can also <img alt="edit_button" src="../../../_images/edit_button.png" /> and <img alt="delete_button" src="../../../_images/delete_button.png" /> already existing teams.</p>
+<p>To facilitate the process of creating teams, instructors can use the <img alt="export_teams_button" src="../../../_images/export_teams_button.png" /> button to export the teams in an exercise to a file, which can then be imported in other exercises.</p>
+<p>To import teams into an exercise, instructors can use the <img alt="import_teams_button" src="../../../_images/import_teams_button.png" /> button. This allows them to choose between importing from a file, or importing directly from
+another exercise in the course. In both cases, instructors must choose if they want to delete all the existing teams, or only create new teams, as shown below:</p>
+<figure class="align-center" id="id4">
+<img alt="Import strategy" src="../../../_images/import_strategy.png" />
+<figcaption>
+<p><span class="caption-text">Import strategy</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
 </figure>
-</div></blockquote>
-</li>
-<li><p>Click the <img alt="edit" src="../../../_images/edit1.png" /> button of the file upload exercise and adapt the interactive problem statement. There you can also set release and due dates.</p></li>
-<li><p>You can get an overview of the exercise by clicking on the title.</p></li>
-</ul>
 </section>
-<section id="student-submission">
-<h2><a class="toc-backref" href="#id3">Student Submission</a><a class="headerlink" href="#student-submission" title="Permalink to this heading"></a></h2>
-<ul>
-<li><p>When the exercise is released the students can upload the requested file.</p></li>
-<li><p>They can choose a file with <a class="reference internal" href="../../../_images/browse.png"><img alt="browse" src="../../../_images/browse.png" style="width: 46.5px; height: 24.0px;" /></a> and then submit the file with <a class="reference internal" href="../../../_images/submit1.png"><img alt="submit" src="../../../_images/submit1.png" style="width: 43.5px; height: 23.0px;" /></a>.</p>
-<blockquote>
-<div><figure class="align-center">
-<img alt="../../../_images/file_upload_exercise_student_view.png" src="../../../_images/file_upload_exercise_student_view.png" />
+<section id="collaboration">
+<h2><a class="toc-backref" href="#id9">Collaboration</a><a class="headerlink" href="#collaboration" title="Permalink to this heading"></a></h2>
+<p>When working on a team exercise, students can work collaboratively using the live editors. This is available for
+<a class="reference internal" href="../modeling/"><span class="doc">Modeling exercises</span></a> and <a class="reference internal" href="../textual/"><span class="doc">Textual exercises</span></a>.</p>
+<p>The live editors show the status of all the team members, and allow students to simultaneously edit the same exercise:</p>
+<figure class="align-center" id="id5">
+<img alt="Live modeling editor" src="../../../_images/live_modeling_editor.png" />
+<figcaption>
+<p><span class="caption-text">Live modeling editor</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
 </figure>
-</div></blockquote>
-</li>
-<li><p>After a file was uploaded it can then be downloaded again with the link below.</p>
-<blockquote>
-<div><figure class="align-center">
-<img alt="../../../_images/file_upload_exercise_student_submitted.png" src="../../../_images/file_upload_exercise_student_submitted.png" />
-</figure>
-</div></blockquote>
-</li>
-</ul>
 </section>
-<section id="assessment">
-<h2><a class="toc-backref" href="#id4">Assessment</a><a class="headerlink" href="#assessment" title="Permalink to this heading"></a></h2>
-<ul class="simple">
-<li><p>When the due date is over you can assess the submissions. From the assessment dashboard go to exercise assessment dashboard of the file upload exercise.</p></li>
-<li><p>There you can assess the submitted student submissions, by first downloading the file, and then creating feedback with points.</p></li>
-</ul>
+<section id="team-overview">
+<h2><a class="toc-backref" href="#id10">Team overview</a><a class="headerlink" href="#team-overview" title="Permalink to this heading"></a></h2>
+<p>The same team can be shared for multiple exercises. Viewing the page for a single team allows students, tutors and instructors to get an overview of all the
+exercises for that team along with their current status. To access the team overview page, users can click on <img alt="team_button" src="../../../_images/team_button.png" /> or on the team’s short name.</p>
+<figure class="align-center" id="id6">
+<img alt="Team overview" src="../../../_images/team_overview_page.png" />
+<figcaption>
+<p><span class="caption-text">Team overview</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 
@@ -200,8 +196,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../textual/" class="btn btn-neutral float-left" title="Textual exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../team-exercises/" class="btn btn-neutral float-right" title="Team exercises" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../file-upload/" class="btn btn-neutral float-left" title="File Upload Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../lectures/" class="btn btn-neutral float-right" title="Lectures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

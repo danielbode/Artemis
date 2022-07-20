@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Experience &mdash; Artemis  documentation</title>
+  <title>Grading &mdash; Artemis  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="next" title="Guided Tours" href="guided_tours/" />
-    <link rel="prev" title="Notifications" href="../notifications/" /> 
+    <link rel="next" title="Customizing Courses" href="../courses/customizable/" />
+    <link rel="prev" title="User Interface Themes" href="../user-experience/themes/" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,12 +47,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../communication/">Communication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../learning-analytics/">Learning Analytics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">User Experience</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guided_tours/">Guided Tours</a></li>
-<li class="toctree-l2"><a class="reference internal" href="themes/">User Interface Themes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-experience/">User Experience</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Grading</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#instructors">Instructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#students">Students</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../grading/">Grading</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../courses/customizable/">Customizing Courses</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
@@ -91,9 +91,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
-      <li>User Experience</li>
+      <li>Grading</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/user-experience.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/ls1intum/Artemis/blob/develop/docs/user/grading.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -101,31 +101,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="user-experience">
-<span id="id1"></span><h1>User Experience<a class="headerlink" href="#user-experience" title="Permalink to this heading"></a></h1>
-<p>Artemis has been developed with high learnability and user experience in mind:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="guided_tours/">Guided Tours</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guided_tours/#control-guided-tours">Control Guided Tours</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guided_tours/#restart-or-resume-guided-tours">Restart or Resume Guided Tours</a></li>
+  <section id="grading">
+<h1>Grading<a class="headerlink" href="#grading" title="Permalink to this heading"></a></h1>
+<p>Artemis allows instructors to define grading keys for courses and exams.
+When the grading key is defined, the total points obtained by a student from all exercises are calculated and mapped to a grade.
+Grading Keys can be either:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Grade</span></code> type which maps the points to a letter or numeric grade with a <code class="docutils literal notranslate"><span class="pre">First</span> <span class="pre">Passing</span> <span class="pre">Grade</span></code>. This can be used e.g., for final exams or courses without exams that are graded solely by exercises.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Bonus</span></code> type which maps the points to a numeric value. This can be used e.g., when the grade obtained in the given course or exam is not an end result but complements a final exam.</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="themes/">User Interface Themes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="themes/#changing-the-theme">Changing the theme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="themes/#synchronize-the-theme-with-your-operating-system">Synchronize the theme with your operating system</a></li>
-</ul>
-</li>
-</ul>
+<section id="instructors">
+<h2>Instructors<a class="headerlink" href="#instructors" title="Permalink to this heading"></a></h2>
+<p>Instructors can export and import grading keys in CSV format to reuse them inside or outside of Artemis.
+If a grading key is defined, exporting student results includes the obtained grade information as well.
+It is also possible to create or modify grading keys after an exam or course is over.
+In that case student grades will be adjusted automatically.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can check <a class="reference external" href="/user/exams/instructors_guide/#grading-key">how to create grading keys for courses and exams</a> for more detailed information.</p>
 </div>
+<figure class="align-center">
+<img alt="Course Grading Key with Bonus type" src="../../_images/grade_key_bonus.png" />
+</figure>
+</div></blockquote>
+</section>
+<section id="students">
+<h2>Students<a class="headerlink" href="#students" title="Permalink to this heading"></a></h2>
+<p>During a semester, students can see their grade based on attainable points for a course.
+Attainable points are the sum of the maximum points for all exercises assessed so far, independent of a student’s participation.
+This means the students can track their relative performance during the semester without having to wait until all the exercises are conducted and assessed.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="/user/exams/students_guide/#grades">Grades section</a> has more detailed information on how to read the boundaries of the grading keys.</p>
+</div>
+<figure class="align-center">
+<img alt="Bonus Grade in Course Statistics Page" src="../../_images/course_statistics_attainable.png" />
+</figure>
+</div></blockquote>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../notifications/" class="btn btn-neutral float-left" title="Notifications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="guided_tours/" class="btn btn-neutral float-right" title="Guided Tours" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../user-experience/themes/" class="btn btn-neutral float-left" title="User Interface Themes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../courses/customizable/" class="btn btn-neutral float-right" title="Customizing Courses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

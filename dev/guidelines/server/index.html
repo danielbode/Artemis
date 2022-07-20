@@ -350,6 +350,7 @@ It gets activated when a particular jar file is detected on the classpath. The s
 <li><p>Always qualify a static class member reference with its class name and not with a reference or expression of that class’s type.</p></li>
 <li><p>Prefer using primitive types to classes, e.g. <code class="docutils literal notranslate"><span class="pre">long</span></code> instead of <code class="docutils literal notranslate"><span class="pre">Long</span></code>.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">./gradlew</span> <span class="pre">spotlessCheck</span></code> and <code class="docutils literal notranslate"><span class="pre">./gradlew</span> <span class="pre">spotlessApply</span></code> to check Java code style and to automatically fix it.</p></li>
+<li><p>Don’t use <code class="docutils literal notranslate"><span class="pre">.collect(Collectors.toList())</span></code>. Instead use only <code class="docutils literal notranslate"><span class="pre">.toList()</span></code> for an unmodifiable list or <code class="docutils literal notranslate"><span class="pre">.collect(Collectors.toCollection(ArrayList::new))</span></code> to explicitly create a new ArrayList.</p></li>
 </ul>
 </section>
 <section id="avoid-service-dependencies">
